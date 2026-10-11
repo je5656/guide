@@ -37,7 +37,6 @@
             padding-bottom: 40px;
         }
 
-        /* Header */
         header {
             position: sticky; top: 0; z-index: 100;
             background: #FFFFFF;
@@ -77,7 +76,6 @@
         }
         .btn-official-site:hover { background: #0F172A; }
 
-        /* Search Bar */
         .search-container { max-width: 880px; margin: 0 auto; padding: 0 16px 14px; }
         .search-box { position: relative; display: flex; align-items: center; }
         .search-input {
@@ -88,7 +86,6 @@
         .search-input:focus { border-color: var(--primary); background: #FFFFFF; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
         .search-icon { position: absolute; left: 16px; font-size: 1.1rem; color: var(--text-sub); }
 
-        /* Navigation Tabs */
         .nav-tabs-wrapper {
             overflow-x: auto; white-space: nowrap; background: #FFFFFF; border-top: 1px solid #F1F5F9; scrollbar-width: none;
         }
@@ -100,10 +97,8 @@
         }
         .tab-item.active { color: var(--primary); border-bottom-color: var(--primary); }
 
-        /* Container */
         .container { max-width: 880px; margin: 0 auto; padding: 20px 16px; }
 
-        /* Hero Banner */
         .hero-banner {
             background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
             border-radius: 20px; padding: 28px 24px; color: #FFFFFF; margin-bottom: 20px;
@@ -112,7 +107,6 @@
         .hero-title { font-size: 1.55rem; font-weight: 800; line-height: 1.35; margin-bottom: 6px; }
         .hero-desc { font-size: 0.88rem; color: #DBEAFE; }
 
-        /* Grid Quick Buttons */
         .grid-menu {
             display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px;
         }
@@ -127,7 +121,6 @@
         .grid-icon { font-size: 1.6rem; margin-bottom: 4px; line-height: 1; }
         .grid-label { font-size: 0.82rem; font-weight: 700; color: var(--text-title); }
 
-        /* Section Cards */
         .section-card {
             background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px;
             padding: 24px 20px; margin-bottom: 20px;
@@ -136,7 +129,6 @@
         .section-badge { color: var(--primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; display: block; margin-bottom: 4px; }
         .section-title { font-size: 1.25rem; font-weight: 800; color: var(--text-title); }
 
-        /* Interactive Info Item */
         .info-item {
             padding: 16px 18px; background: var(--bg-main); border: 1px solid var(--border-color);
             border-radius: 12px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;
@@ -148,7 +140,6 @@
         .info-item-sub { font-size: 0.83rem; color: var(--text-sub); margin-top: 4px; line-height: 1.4; }
         .info-arrow { color: var(--primary); font-weight: 700; font-size: 0.88rem; white-space: nowrap; flex-shrink: 0; }
 
-        /* Modal Overlay */
         .modal-overlay {
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); z-index: 999;
@@ -187,7 +178,6 @@
         }
         .btn-landing-action:hover { background: var(--primary-hover); }
 
-        /* Hidden Admin Panel Overlay */
         .admin-modal-card {
             background: #FFFFFF; border-radius: 24px; width: 100%; max-width: 840px;
             max-height: 90vh; overflow-y: auto; padding: 32px 28px; position: relative; text-align: left;
@@ -220,7 +210,6 @@
             background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; padding: 14px; margin-bottom: 18px;
         }
 
-        /* WYSIWYG Toolbar */
         .editor-toolbar {
             background: #F8FAFC; border: 1px solid var(--border-color); border-bottom: none;
             padding: 10px; border-radius: 10px 10px 0 0; display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
@@ -236,13 +225,11 @@
             background: #FFFFFF; border-radius: 0 0 10px 10px; outline: none; font-size: 0.95rem; line-height: 1.6;
         }
 
-        /* Password Box */
         .password-section-box {
             background: #F8FAFC; border: 1px solid var(--border-color); border-radius: 14px; padding: 16px; margin-top: 24px;
         }
         .password-section-title { font-size: 0.95rem; font-weight: 800; color: var(--text-title); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
 
-        /* Floating Chatbot Widget */
         .chatbot-widget {
             position: fixed; bottom: 24px; right: 20px; z-index: 500;
             display: flex; align-items: center; gap: 10px; text-decoration: none;
@@ -257,7 +244,6 @@
             font-size: 1.5rem; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4); cursor: pointer;
         }
 
-        /* Footer */
         footer {
             max-width: 880px; margin: 40px auto 10px; padding: 16px 20px;
             border-top: 1px solid #F1F5F9;
@@ -270,7 +256,6 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <div class="header-top">
             <a href="#" class="brand-logo">
@@ -297,14 +282,12 @@
 
         <div class="nav-tabs-wrapper">
             <nav class="nav-tabs" id="dynamicTabsNav">
-                <!-- JavaScript Rendered Tabs -->
             </nav>
         </div>
     </header>
 
     <div class="container">
 
-        <!-- Hero Banner -->
         <section class="hero-banner">
             <div>
                 <h1 class="hero-title" id="dispHeroTitle">패스트파이브 선릉5호점<br>입주 멤버 안내 통합 센터</h1>
@@ -313,7 +296,6 @@
             <a href="https://fastfive.co.kr/" target="_blank" style="background:#FFFFFF; color:var(--primary); padding:10px 18px; border-radius:12px; font-weight:800; font-size:0.88rem; text-decoration:none; white-space:nowrap;">공식 웹사이트 ↗</a>
         </section>
 
-        <!-- Quick Grid Buttons (5종) -->
         <div class="grid-menu">
             <div class="grid-card" onclick="openModal('wifi')">
                 <div class="grid-icon">📶</div>
@@ -337,12 +319,10 @@
             </div>
         </div>
 
-        <!-- Rendered Sections by JavaScript -->
         <div id="dynamicSectionsContainer"></div>
 
     </div>
 
-    <!-- MAIN POPUP MODAL -->
     <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal()">✕</button>
@@ -350,7 +330,6 @@
         </div>
     </div>
 
-    <!-- PREVIEW MODAL (최상위 레이어) -->
     <div class="modal-overlay" id="previewModalOverlay" onclick="closePreviewOutside(event)" style="z-index: 2000;">
         <div class="modal-card">
             <button class="modal-close" onclick="closePreviewModal()">✕</button>
@@ -358,7 +337,6 @@
         </div>
     </div>
 
-    <!-- ADMIN MODAL OVERLAY -->
     <div class="modal-overlay" id="adminModalOverlay" onclick="closeAdminOutside(event)">
         <div class="admin-modal-card">
             <button class="modal-close" onclick="closeAdminModal()">✕</button>
@@ -374,7 +352,6 @@
                 </div>
             </div>
 
-            <!-- 관리자 지점 선택 -->
             <div class="admin-form-group" style="background:#FFF7ED; border:1px solid #FFEDD5; padding:12px; border-radius:10px;">
                 <label class="admin-label" style="color:#C2410C;">🏢 수정할 지점 선택 (전 지점 통합 관리)</label>
                 <select id="admBranchSelect" class="search-input" style="padding:10px 14px; font-weight:800; color:#C2410C;" onchange="switchAdminBranch(this.value)">
@@ -386,7 +363,6 @@
                 </select>
             </div>
 
-            <!-- 메인 파란색 배너 직접 수정 -->
             <div class="banner-edit-box">
                 <label class="admin-label" style="color:#1E40AF;">🟦 상단 파란색 배너 문구 수정</label>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
@@ -404,7 +380,6 @@
             <div class="admin-form-group">
                 <label class="admin-label">수정할 가이드 항목 선택</label>
                 <select id="admItemSelect" class="search-input" style="padding:10px 14px;" onchange="loadItemToEditor()">
-                    <!-- Populated via JavaScript -->
                 </select>
             </div>
 
@@ -439,11 +414,9 @@
                     <input type="color" onchange="execColor(this.value)" style="height:32px; border:none; cursor:pointer;" title="글자색">
                 </div>
                 <div class="editor-content" id="editorContent" contenteditable="true">
-                    <!-- Editable Content -->
                 </div>
             </div>
 
-            <!-- Password Change Box -->
             <div class="password-section-box">
                 <div class="password-section-title">🔒 비밀번호 변경 설정 (독립 시스템)</div>
                 <p style="font-size:0.82rem; color:var(--text-sub); margin-bottom:10px;">관리자 로그인에 사용되는 비밀번호를 변경하실 수 있습니다.</p>
@@ -452,23 +425,19 @@
         </div>
     </div>
 
-    <!-- Floating Chatbot Widget -->
     <a href="https://members.fastfive.co.kr/inquiry/create" target="_blank" class="chatbot-widget" title="매니저 1:1 문의">
         <span class="chatbot-label">1:1 매니저 문의</span>
         <div class="chatbot-icon">💬</div>
     </a>
 
-    <!-- Footer -->
     <footer>
         본 가이드 웹사이트는 <span class="secret-trigger" onclick="triggerSecretLogin()">서지은</span>에 의해 제작 및 배포되었으며, 모든 권리 및 라이선스는 서지은에게 있습니다. 문제 발생 시 연락 바랍니다. (Email: je.seo@fastfive.co.kr)
     </footer>
 
     <script>
-        // Admin Password Storage (Initial: 550428*)
         let adminPassword = localStorage.getItem('ff_admin_pw') || "550428*";
         let currentBranchKey = "seolleung5";
 
-        // Multi-Branch Detailed Database Container
         let branchDataStore = JSON.parse(localStorage.getItem('ff_branch_datastore')) || {
             'seolleung5': {
                 branchName: '선릉5호점',
@@ -488,9 +457,9 @@
                             <p>평일 09:30 ~ 18:30 (점심시간 12:00~13:00 제외)</p>
                             <h2>소속 그룹 등록 절차 (앱 가입 가이드)</h2>
                             <ul>
-                                <li>1. 앱스토어/구글플레이에서 '패스트파이브' 앱 다운로드</li>
-                                <li>2. 사내 담당자/매니저에게 수령한 <strong>초대 링크(72시간 유효)</strong> 접속</li>
-                                <li>3. [승인 요청] ➡️ 그룹명 확인 후 [소속 확정] 클릭</li>
+                                <li>1. 앱스토어/구글플레이에서 '패스트파이브' 앱 다운로드[cite: 53, 63]</li>
+                                <li>2. 사내 담당자/매니저에게 수령한 <strong>초대 링크(72시간 유효)</strong> 접속[cite: 54, 63]</li>
+                                <li>3. [승인 요청] ➡️ 그룹명 확인 후 [소속 확정] 클릭[cite: 54]</li>
                             </ul>
                         `
                     },
@@ -518,17 +487,17 @@
                         sub: '패파 앱을 통한 스마트폰 태그 출입 가이드 (랜야드 재발급 3.3만원)',
                         body: `
                             <h1>모바일 출입 카드 이용안내</h1>
-                            <p>실물 카드 없이 스마트폰 앱 하나로 출입문을 해제할 수 있습니다.</p>
+                            <p>실물 카드 없이 스마트폰 앱 하나로 출입문을 해제할 수 있습니다.[cite: 64]</p>
                             <h2>발급 및 이용 방법</h2>
                             <ul>
-                                <li>1. 패파 앱 로그인 ➡️ [출입카드] 탭 ➡️ [출입카드 발급] 터치</li>
-                                <li>2. 도어락 리더기에 스마트폰 대기 (태그 시 에어팝 기기에 녹색불 점등)</li>
+                                <li>1. 패파 앱 로그인 ➡️ [출입카드] 탭 ➡️ [출입카드 발급] 터치[cite: 55, 64]</li>
+                                <li>2. 도어락 리더기에 스마트폰 대기 (태그 시 에어팝 기기에 녹색불 점등)[cite: 64]</li>
                             </ul>
                             <h2>확인사항 및 실물 카드 정책</h2>
                             <ul>
-                                <li>• 모바일 출입카드 상용화로 실물 카드키 키셋 제공 불가</li>
-                                <li>• 실물 랜야드 카드 재발급 필요 시 <strong>33,000원(VAT 포함)</strong> 발생</li>
-                                <li>• 인식 오류 시 아이폰 [블루투스 허용], 갤럭시 [NFC 카드모드] 재설정</li>
+                                <li>• 모바일 출입카드 상용화로 실물 카드키 키셋 제공 불가[cite: 64]</li>
+                                <li>• 실물 랜야드 카드 재발급 필요 시 <strong>33,000원(VAT 포함)</strong> 발생[cite: 64]</li>
+                                <li>• 인식 오류 시 아이폰 [블루투스 허용], 갤럭시 [NFC 카드모드] 재설정[cite: 64]</li>
                             </ul>
                         `
                     },
@@ -559,14 +528,14 @@
                             <h1>복합기 드라이버 및 결제 세팅</h1>
                             <h2>1. 최초 흑백 인쇄 세팅</h2>
                             <ul>
-                                <li>• 앱 [내계정] ➡️ [설정] ➡️ [복합기 계정등록] 전용 PW 설정</li>
-                                <li>• PC에서 <code>print.fastfive.co.kr</code> 접속 ➡️ 드라이버 및 Sindoh Cloud MPS 설치</li>
-                                <li>• <strong>흑백 인쇄:</strong> 인당 월 200장 무료 제공</li>
+                                <li>• 앱 [내계정] ➡️ [설정] ➡️ [복합기 계정등록] 전용 PW 설정[cite: 63, 70]</li>
+                                <li>• PC에서 <code>print.fastfive.co.kr</code> 접속 ➡️ 드라이버 및 Sindoh Cloud MPS 설치[cite: 70]</li>
+                                <li>• <strong>흑백 인쇄:</strong> 인당 월 200장 무료 제공[cite: 70]</li>
                             </ul>
                             <h2>2. 컬러 인쇄 카드 등록 (A4: 110원 / A3: 220원)</h2>
-                            <p><code>print.fastfive.co.kr</code> 접속 ➡️ [설정] ➡️ [카드관리]에서 법인/개인 결제카드 등록 후 이용</p>
+                            <p><code>print.fastfive.co.kr</code> 접속 ➡️ [설정] ➡️ [카드관리]에서 법인/개인 결제카드 등록 후 이용[cite: 71]</p>
                             <h3>고객센터 및 장애 조치</h3>
-                            <p>신도리코 고객센터 <strong>1588-5850</strong> / 결제 오류 시 <code>print.fastfive.co.kr</code> - [My info] - [결제 이력] 재결제 진행</p>
+                            <p>신도리코 고객센터 <strong>1588-5850</strong> / 결제 오류 시 <code>print.fastfive.co.kr</code> - [My info] - [결제 이력] 재결제 진행[cite: 70, 71]</p>
                         `
                     },
                     'benefits': {
@@ -612,20 +581,20 @@
                             <h2>1. F&B 바 및 취식 정책</h2>
                             <ul>
                                 <li>• 시리얼, 우유/두유, 원두커피 무상 제공</li>
-                                <li>• 취식 가능 장소: 사무실, 1층 라운지, 13층 다이닝룸 (점심시간 11:00~14:00)</li>
-                                <li>• 취식 금지 공간: 미팅룸, 폰부스 (음료만 가능)</li>
-                                <li>• 공용 냉장고 스티커 필수 부착 (매주 금요일 18:00 미부착 음식물 폐기)</li>
+                                <li>• 취식 가능 장소: 사무실, 1층 라운지, 13층 다이닝룸 (점심시간 11:00~14:00)[cite: 68]</li>
+                                <li>• 취식 금지 공간: 미팅룸, 폰부스 (음료만 가능)[cite: 68]</li>
+                                <li>• 공용 냉장고 스티커 필수 부착 (매주 금요일 18:00 미부착 음식물 폐기)[cite: 68, 69]</li>
                             </ul>
                             <h2>2. 우편물 & 택배 수령</h2>
                             <ul>
-                                <li>• 1층 메일룸 수령 (주소 작성 시 반드시 사무실 호수+회사명 기재)</li>
-                                <li>• 등기 우편 및 카드는 직접 대면 수령 필수 (2개월 미수령 시 반송/폐기)</li>
+                                <li>• 1층 메일룸 수령 (주소 작성 시 반드시 사무실 호수+회사명 기재)[cite: 68]</li>
+                                <li>• 등기 우편 및 카드는 직접 대면 수령 필수 (2개월 미수령 시 반송/폐기)[cite: 68]</li>
                             </ul>
                             <h2>3. 기타 수칙</h2>
                             <ul>
-                                <li>• 1:1 문의 운영시간: 평일 08:00 ~ 22:00 (주말/공휴일 휴무)</li>
-                                <li>• 대형폐기물 접수: 강남구 통합콜센터 태화용역(1522-3833) 직접 신청</li>
-                                <li>• 건물 내/외부 전체 금연 (전자담배 포함 절대 불가)</li>
+                                <li>• 1:1 문의 운영시간: 평일 08:00 ~ 22:00 (주말/공휴일 휴무)[cite: 65]</li>
+                                <li>• 대형폐기물 접수: 강남구 통합콜센터 태화용역(1522-3833) 직접 신청[cite: 68]</li>
+                                <li>• 건물 내/외부 전체 금연 (전자담배 포함 절대 불가)[cite: 68, 69]</li>
                             </ul>
                         `
                     }
@@ -633,7 +602,6 @@
             }
         };
 
-        // Initialize App
         window.onload = function() {
             ensureBranchExist('seolleung1', '선릉1호점');
             ensureBranchExist('seolleung2', '선릉2호점');
@@ -678,7 +646,6 @@
             populateAdminDropdown();
         }
 
-        // Render Dynamic Tabs
         function renderNavTabs() {
             const data = branchDataStore[currentBranchKey];
             const container = document.getElementById('dynamicTabsNav');
@@ -687,7 +654,6 @@
             `).join('');
         }
 
-        // Render Dynamic Sections
         function renderSections() {
             const data = branchDataStore[currentBranchKey];
             const container = document.getElementById('dynamicSectionsContainer');
@@ -727,7 +693,6 @@
             container.innerHTML = html;
         }
 
-        // Switch Category Tabs
         function switchCategory(catName, el) {
             document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
             el.classList.add('active');
@@ -741,7 +706,6 @@
             });
         }
 
-        // Modal Controls
         function openModal(key) {
             const data = branchDataStore[currentBranchKey].items[key];
             if (!data) return;
@@ -792,7 +756,6 @@
             });
         }
 
-        // Admin Stealth Trigger & Controls
         function triggerSecretLogin() {
             const pw = prompt("관리자 비밀번호를 입력하세요.", "");
             if (pw === adminPassword) {
@@ -849,7 +812,6 @@
             document.getElementById('previewModalOverlay').classList.add('active');
         }
 
-        // 관리자 모달창을 닫지 않고 연속 저장
         function saveAdminChanges() {
             const key = document.getElementById('admItemSelect').value;
             const branch = branchDataStore[currentBranchKey];
@@ -892,7 +854,6 @@
             }
         }
 
-        // Executive Editor Commands
         function execCmd(cmd, value=null) { document.execCommand(cmd, false, value); }
         function execColor(color) { document.execCommand('foreColor', false, color); }
         function insertLinkPrompt() {
