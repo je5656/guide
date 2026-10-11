@@ -3,580 +3,820 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FASTFIVE SEOLLEUNG | 프리미엄 멤버 가이드</title>
+    <title>FASTFIVE SEOLLEUNG | 지점 통합 가이드 센터</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-dark: #121824;
-            --secondary-dark: #1E2638;
-            --accent-gold: #C5A880;
-            --accent-gold-hover: #B3956B;
-            --bg-light: #F8FAF9;
+            --primary: #2563EB;
+            --primary-hover: #1D4ED8;
+            --primary-light: #EFF6FF;
+            --bg-main: #F8FAFC;
             --card-bg: #FFFFFF;
             --text-title: #0F172A;
             --text-body: #334155;
             --text-sub: #64748B;
             --border-color: #E2E8F0;
-            --success-green: #10B981;
+            --badge-bg: #DBEAFE;
+            --badge-text: #1E40AF;
+            --ff-orange: #FF4B33;
         }
 
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0; padding: 0;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background-color: var(--bg-light);
+            background-color: var(--bg-main);
             color: var(--text-body);
             line-height: 1.6;
-            padding-bottom: 120px;
+            padding-bottom: 40px;
         }
 
-        /* AJD Style Header */
+        /* Top Header */
         header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(18, 24, 36, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
-            padding: 18px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: sticky; top: 0; z-index: 100;
+            background: #FFFFFF;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .header-top {
+            padding: 14px 20px;
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 880px; margin: 0 auto; gap: 12px;
         }
 
         .brand-logo {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #FFFFFF;
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-weight: 800; font-size: 1.15rem; color: var(--text-title);
+            display: flex; align-items: center; gap: 8px; text-decoration: none;
+            white-space: nowrap;
         }
 
         .brand-badge {
-            font-family: 'Pretendard', sans-serif;
-            background: rgba(197, 168, 128, 0.2);
-            color: var(--accent-gold);
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 3px 8px;
-            border-radius: 4px;
-            letter-spacing: 0;
+            background: var(--primary-light); color: var(--primary);
+            font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 6px;
         }
 
-        .btn-cs-header {
-            background: var(--accent-gold);
-            color: #121824;
-            padding: 9px 18px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s ease;
+        .branch-select-header {
+            padding: 6px 12px; border-radius: 8px; border: 1.5px solid var(--primary);
+            font-weight: 800; font-size: 0.88rem; color: var(--primary); background: #FFFFFF;
+            cursor: pointer; outline: none;
         }
 
-        .btn-cs-header:hover {
-            background: var(--accent-gold-hover);
+        .header-links { display: flex; align-items: center; gap: 10px; }
+
+        .btn-official-site {
+            background: #1E293B; color: #FFFFFF; font-size: 0.8rem; font-weight: 700;
+            padding: 7px 14px; border-radius: 6px; text-decoration: none; transition: background 0.2s;
+            white-space: nowrap;
         }
+        .btn-official-site:hover { background: #0F172A; }
+
+        /* Search Bar */
+        .search-container { max-width: 880px; margin: 0 auto; padding: 0 16px 14px; }
+        .search-box { position: relative; display: flex; align-items: center; }
+        .search-input {
+            width: 100%; padding: 12px 18px 12px 44px;
+            background: var(--bg-main); border: 1.5px solid var(--border-color); border-radius: 12px;
+            font-size: 0.92rem; font-weight: 600; color: var(--text-title); outline: none; transition: all 0.2s;
+        }
+        .search-input:focus { border-color: var(--primary); background: #FFFFFF; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+        .search-icon { position: absolute; left: 16px; font-size: 1.1rem; color: var(--text-sub); }
+
+        /* Navigation Tabs */
+        .nav-tabs-wrapper {
+            overflow-x: auto; white-space: nowrap; background: #FFFFFF; border-top: 1px solid #F1F5F9; scrollbar-width: none;
+        }
+        .nav-tabs-wrapper::-webkit-scrollbar { display: none; }
+        .nav-tabs { display: flex; max-width: 880px; margin: 0 auto; padding: 0 12px; }
+        .tab-item {
+            padding: 12px 16px; font-size: 0.92rem; font-weight: 700; color: var(--text-sub);
+            text-decoration: none; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.2s;
+        }
+        .tab-item.active { color: var(--primary); border-bottom-color: var(--primary); }
 
         /* Container */
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 32px 20px;
-        }
+        .container { max-width: 880px; margin: 0 auto; padding: 20px 16px; }
 
         /* Hero Banner */
-        .hero {
-            background: var(--primary-dark);
-            border-radius: 24px;
-            padding: 40px 28px;
-            color: #FFFFFF;
-            margin-bottom: 28px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            position: relative;
-            overflow: hidden;
+        .hero-banner {
+            background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+            border-radius: 20px; padding: 28px 24px; color: #FFFFFF; margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15); display: flex; justify-content: space-between; align-items: center;
         }
+        .hero-title { font-size: 1.55rem; font-weight: 800; line-height: 1.35; margin-bottom: 6px; }
+        .hero-desc { font-size: 0.88rem; color: #DBEAFE; }
 
-        .hero::after {
-            content: "";
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(197, 168, 128, 0.15) 0%, rgba(0,0,0,0) 70%);
-            pointer-events: none;
+        /* Grid Quick Buttons */
+        .grid-menu {
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px;
         }
+        @media (max-width: 640px) { .grid-menu { grid-template-columns: repeat(3, 1fr); } }
 
-        .hero-tag {
-            color: var(--accent-gold);
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            display: block;
+        .grid-card {
+            background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px;
+            padding: 16px 10px; text-align: center; cursor: pointer; transition: all 0.2s; text-decoration: none; color: inherit;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
+        .grid-card:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08); }
+        .grid-icon { font-size: 1.6rem; margin-bottom: 4px; line-height: 1; }
+        .grid-label { font-size: 0.82rem; font-weight: 700; color: var(--text-title); }
 
-        .hero-title {
-            font-size: 2.1rem;
-            font-weight: 800;
-            line-height: 1.3;
-            letter-spacing: -0.8px;
-            margin-bottom: 14px;
-        }
-
-        .hero-desc {
-            font-size: 1rem;
-            color: #94A3B8;
-            font-weight: 400;
-            word-break: keep-all;
-        }
-
-        /* Quick Pills Navigation */
-        .quick-nav {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 32px;
-        }
-
-        .quick-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 16px;
-            border-radius: 16px;
-            color: var(--text-title);
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-            transition: all 0.2s ease;
-        }
-
-        .quick-btn:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-2px);
-        }
-
-        .quick-btn span {
-            color: var(--accent-gold);
-        }
-
-        /* Section Cards Style */
+        /* Section Cards */
         .section-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 32px 28px;
-            margin-bottom: 28px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px;
+            padding: 24px 20px; margin-bottom: 20px;
+        }
+        .section-header { margin-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-start; }
+        .section-badge { color: var(--primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; display: block; margin-bottom: 4px; }
+        .section-title { font-size: 1.25rem; font-weight: 800; color: var(--text-title); }
+
+        /* Interactive Info Item */
+        .info-item {
+            padding: 16px 18px; background: var(--bg-main); border: 1px solid var(--border-color);
+            border-radius: 12px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; transition: all 0.2s; gap: 12px;
+        }
+        .info-item:hover { border-color: var(--primary); background: #FFFFFF; }
+        .info-item-left { display: flex; flex-direction: column; justify-content: center; text-align: left; }
+        .info-item-title { font-weight: 700; font-size: 0.95rem; color: var(--text-title); line-height: 1.4; }
+        .info-item-sub { font-size: 0.83rem; color: var(--text-sub); margin-top: 4px; line-height: 1.4; }
+        .info-arrow { color: var(--primary); font-weight: 700; font-size: 0.88rem; white-space: nowrap; flex-shrink: 0; }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); z-index: 999;
+            display: none; align-items: center; justify-content: center; padding: 20px;
+        }
+        .modal-overlay.active { display: flex; }
+        
+        /* Preview Modal Layering (Highest Z-Index) */
+        #previewModalOverlay {
+            z-index: 2000 !important;
         }
 
-        .card-num {
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
+        .modal-card {
+            background: #FFFFFF; border-radius: 24px; width: 100%; max-width: 680px;
+            max-height: 88vh; overflow-y: auto; padding: 28px 24px; position: relative; text-align: left;
+        }
+        .modal-close {
+            position: absolute; top: 20px; right: 20px; background: var(--bg-main);
+            border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; font-weight: 800;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .modal-badge {
+            background: var(--badge-bg); color: var(--badge-text); font-size: 0.75rem;
+            font-weight: 800; padding: 4px 10px; border-radius: 8px; display: inline-block; margin-bottom: 12px;
+        }
+        .modal-title { font-size: 1.35rem; font-weight: 800; color: var(--text-title); margin-bottom: 12px; line-height: 1.35; }
+        .modal-body { font-size: 0.95rem; color: var(--text-body); line-height: 1.6; }
+        .modal-body h1 { font-size: 1.3rem; font-weight: 800; color: var(--text-title); margin: 18px 0 8px; padding-bottom: 4px; border-bottom: 2px solid var(--border-color); }
+        .modal-body h2 { font-size: 1.15rem; font-weight: 700; color: var(--text-title); margin: 16px 0 6px; }
+        .modal-body h3 { font-size: 1.02rem; font-weight: 700; color: var(--primary); margin: 12px 0 4px; }
+        .modal-body p { margin-bottom: 8px; word-break: keep-all; }
+        .modal-body ul { padding-left: 20px; margin-bottom: 10px; }
+        .modal-body li { margin-bottom: 4px; }
+        .modal-body table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        .modal-body th, .modal-body td { border: 1px solid var(--border-color); padding: 8px 12px; font-size: 0.88rem; text-align: left; }
+        .modal-body th { background: var(--bg-main); font-weight: 700; }
+
+        .btn-landing-action {
+            display: inline-block; background: var(--primary); color: #FFFFFF; font-weight: 800;
+            padding: 12px 20px; border-radius: 10px; text-decoration: none; margin-top: 14px; transition: background 0.2s;
+        }
+        .btn-landing-action:hover { background: var(--primary-hover); }
+
+        /* Hidden Admin Panel Overlay */
+        .admin-modal-card {
+            background: #FFFFFF; border-radius: 24px; width: 100%; max-width: 840px;
+            max-height: 90vh; overflow-y: auto; padding: 32px 28px; position: relative; text-align: left;
+            border: 2px solid var(--ff-orange); box-shadow: 0 20px 50px rgba(0,0,0,0.2);
         }
 
-        .card-title {
-            font-size: 1.45rem;
-            font-weight: 800;
-            color: var(--text-title);
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+        .admin-head-bar {
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
+            padding-bottom: 14px; border-bottom: 2px solid #F1F5F9; gap: 12px; flex-wrap: wrap;
         }
 
-        .card-desc {
-            font-size: 0.95rem;
-            color: var(--text-sub);
-            margin-bottom: 24px;
-            word-break: keep-all;
+        .admin-title-text {
+            font-size: 1.15rem; font-weight: 800; color: var(--ff-orange); display: flex; align-items: center; gap: 8px;
         }
 
-        /* Wi-Fi Display */
-        .wifi-box {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-radius: 18px;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .admin-btn-group { display: flex; align-items: center; gap: 8px; }
+
+        .btn-adm {
+            padding: 8px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 800; border: none; cursor: pointer;
+            display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; transition: all 0.2s;
+        }
+        .btn-adm-save { background: var(--ff-orange); color: #FFFFFF; }
+        .btn-adm-preview { background: #0284C7; color: #FFFFFF; }
+        .btn-adm-add { background: #1E293B; color: #FFFFFF; }
+
+        .admin-form-group { margin-bottom: 16px; }
+        .admin-label { font-size: 0.88rem; font-weight: 800; display: block; margin-bottom: 6px; color: var(--text-title); }
+
+        .banner-edit-box {
+            background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; padding: 14px; margin-bottom: 18px;
         }
 
-        .wifi-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 12px;
-            border-bottom: 1px dashed var(--border-color);
+        /* WYSIWYG Toolbar */
+        .editor-toolbar {
+            background: #F8FAFC; border: 1px solid var(--border-color); border-bottom: none;
+            padding: 10px; border-radius: 10px 10px 0 0; display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+        }
+        .editor-btn {
+            background: #FFFFFF; border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 6px;
+            font-size: 0.85rem; font-weight: 700; cursor: pointer; color: var(--text-title);
+        }
+        .editor-btn:hover { background: #E2E8F0; }
+        .editor-select { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--border-color); font-size: 0.85rem; font-weight: 700; }
+        .editor-content {
+            border: 1px solid var(--border-color); padding: 18px; min-height: 240px;
+            background: #FFFFFF; border-radius: 0 0 10px 10px; outline: none; font-size: 0.95rem; line-height: 1.6;
         }
 
-        .wifi-row:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
+        /* Dedicated Password Management Box */
+        .password-section-box {
+            background: #F8FAFC; border: 1px solid var(--border-color); border-radius: 14px; padding: 16px; margin-top: 24px;
+        }
+        .password-section-title { font-size: 0.95rem; font-weight: 800; color: var(--text-title); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+
+        /* Floating Chatbot Widget Icon */
+        .chatbot-widget {
+            position: fixed; bottom: 24px; right: 20px; z-index: 500;
+            display: flex; align-items: center; gap: 10px; text-decoration: none;
+        }
+        .chatbot-label {
+            background: var(--text-title); color: #FFFFFF; font-size: 0.82rem;
+            font-weight: 700; padding: 8px 14px; border-radius: 20px; box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        }
+        .chatbot-icon {
+            width: 54px; height: 54px; background: var(--primary); color: #FFFFFF;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4); cursor: pointer;
         }
 
-        .wifi-label {
-            font-size: 0.9rem;
-            color: var(--text-sub);
-            font-weight: 600;
+        /* Extremely Subtle Stealth Footer */
+        footer {
+            max-width: 880px; margin: 40px auto 10px; padding: 16px 20px;
+            border-top: 1px solid #F1F5F9;
+            font-size: 0.75rem; color: #B4B4B8; font-weight: 400; text-align: center; word-break: keep-all;
         }
 
-        .wifi-val {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--text-title);
-            font-family: monospace;
-        }
-
-        .btn-copy {
-            background: var(--primary-dark);
-            color: #FFFFFF;
-            border: none;
-            width: 100%;
-            padding: 16px;
-            border-radius: 14px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: background 0.2s;
-            margin-top: 8px;
-        }
-
-        .btn-copy:hover {
-            background: var(--secondary-dark);
-        }
-
-        .copy-toast {
-            display: none;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--success-green);
-            font-weight: 700;
-            margin-top: 8px;
-        }
-
-        /* Step Grid */
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        @media (max-width: 600px) {
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .step-card {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 20px 16px;
-            text-align: center;
-        }
-
-        .step-num {
-            background: var(--primary-dark);
-            color: var(--accent-gold);
-            font-size: 0.7rem;
-            font-weight: 800;
-            padding: 3px 8px;
-            border-radius: 6px;
-            display: inline-block;
-            margin-bottom: 12px;
-        }
-
-        .step-icon {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-        }
-
-        .step-title {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-title);
-            margin-bottom: 4px;
-        }
-
-        .step-desc {
-            font-size: 0.82rem;
-            color: var(--text-sub);
-            line-height: 1.4;
-        }
-
-        /* Credit Rules Box */
-        .credit-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 12px;
-        }
-
-        .credit-table th, .credit-table td {
-            padding: 12px 14px;
-            text-align: left;
-            font-size: 0.88rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .credit-table th {
-            background: var(--bg-light);
-            color: var(--text-title);
-            font-weight: 700;
-        }
-
-        /* FAQ Accordion */
-        .faq-item {
-            border-bottom: 1px solid var(--border-color);
-            padding: 16px 0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-q {
-            font-size: 0.98rem;
-            font-weight: 700;
-            color: var(--text-title);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-a {
-            display: none;
-            font-size: 0.9rem;
-            color: var(--text-sub);
-            margin-top: 10px;
-            line-height: 1.5;
-            padding-left: 8px;
-            border-left: 2px solid var(--accent-gold);
-        }
-
-        /* Floating Bottom Bar */
-        .bottom-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(18, 24, 36, 0.98);
-            backdrop-filter: blur(12px);
-            border-top: 1px solid rgba(197, 168, 128, 0.2);
-            padding: 16px 24px;
-            z-index: 100;
-        }
-
-        .bottom-inner {
-            max-width: 720px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .bottom-text {
-            color: #FFFFFF;
-            font-size: 0.95rem;
-            font-weight: 700;
-        }
-
-        .bottom-sub {
-            color: #94A3B8;
-            font-size: 0.8rem;
-        }
-
-        .btn-cs-large {
-            background: var(--accent-gold);
-            color: #121824;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            text-decoration: none;
-            white-space: nowrap;
-            transition: all 0.2s ease;
-        }
-
-        .btn-cs-large:hover {
-            background: var(--accent-gold-hover);
-        }
+        .secret-trigger { color: #B4B4B8; text-decoration: none; cursor: pointer; font-weight: 600; }
+        .secret-trigger:hover { color: #88888D; }
     </style>
 </head>
 <body>
 
     <!-- Header -->
     <header>
-        <div class="brand-logo">
-            FASTFIVE <span class="brand-badge">선릉 권역</span>
+        <div class="header-top">
+            <a href="#" class="brand-logo">
+                FASTFIVE 
+                <select id="branchSelectHeader" class="branch-select-header" onchange="changeBranch(this.value)">
+                    <option value="seolleung5">선릉5호점</option>
+                    <option value="seolleung1">선릉1호점</option>
+                    <option value="seolleung2">선릉2호점</option>
+                    <option value="seolleung3">선릉3호점</option>
+                    <option value="seolleung_central">선릉센트럴점</option>
+                </select>
+            </a>
+            <div class="header-links">
+                <a href="https://fastfive.co.kr/" target="_blank" class="btn-official-site">🏢 공식 홈페이지 ↗</a>
+            </div>
         </div>
-        <a href="https://sf-fastfive.my.site.com/helpcenter/s/" target="_blank" class="btn-cs-header">💬 1:1 문의</a>
+
+        <div class="search-container">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="키워드 검색 (예: 와이파이, 냉장고, 복합기, 크레딧, 혜택, 가구)" onkeyup="filterContent()">
+            </div>
+        </div>
+
+        <div class="nav-tabs-wrapper">
+            <nav class="nav-tabs" id="dynamicTabsNav">
+                <!-- JavaScript Rendered Tabs -->
+            </nav>
+        </div>
     </header>
 
     <div class="container">
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <span class="hero-tag">Seolleung Member Service</span>
-            <h1 class="hero-title">테헤란로의 중심,<br>스마트 오피스 멤버 가이드</h1>
-            <p class="hero-desc">선릉 권역 지점 안내부터 크레딧 활용, 시설 이용 수칙까지 원클릭으로 쉽게 확인하세요.</p>
-        </section>
-
-        <!-- Quick Index -->
-        <div class="quick-nav">
-            <a href="#wifi" class="quick-btn">📶 Wi-Fi 비밀번호 <span>→</span></a>
-            <a href="#access" class="quick-btn">🚪 모바일 출입 카드 <span>→</span></a>
-            <a href="#credit" class="quick-btn">📅 크레딧 / 회의실 <span>→</span></a>
-            <a href="#faq" class="quick-btn">❓ 자주 묻는 질문 TOP 5 <span>→</span></a>
-        </div>
-
-        <!-- 1. Wi-Fi -->
-        <section class="section-card" id="wifi">
-            <div class="card-num">SECTION 01</div>
-            <h2 class="card-title">📶 와이파이 (Wi-Fi) 연결</h2>
-            <p class="card-desc">아래 버튼을 누르면 비밀번호가 즉시 복사됩니다.</p>
-
-            <div class="wifi-box">
-                <div class="wifi-row">
-                    <span class="wifi-label">네트워크 ID (SSID)</span>
-                    <span class="wifi-val">FASTFIVE_5G</span>
-                </div>
-                <div class="wifi-row">
-                    <span class="wifi-label">비밀번호</span>
-                    <span class="wifi-val" id="wifi-pw">five0401</span>
-                </div>
-                <button class="btn-copy" onclick="copyWifiPw()">📋 비밀번호 원클릭 복사하기</button>
-                <div class="copy-toast" id="copy-toast">✓ 비밀번호가 클립보드에 복사되었습니다!</div>
-            </div>
-        </section>
-
-        <!-- 2. Mobile Access -->
-        <section class="section-card" id="access">
-            <div class="card-num">SECTION 02</div>
-            <h2 class="card-title">🚪 모바일 출입 카드 이용</h2>
-            <p class="card-desc">카드 실물 없이 스마트폰 하나로 지점을 자유롭게 이용하세요.</p>
-
-            <div class="steps-grid">
-                <div class="step-card">
-                    <span class="step-num">STEP 1</span>
-                    <div class="step-icon">📱</div>
-                    <div class="step-title">패파 앱 실행</div>
-                    <div class="step-desc">공식 앱 로그인 후 실행</div>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">STEP 2</span>
-                    <div class="step-icon">💳</div>
-                    <div class="step-title">출입카드 선택</div>
-                    <div class="step-desc">메인 화면 [모바일 출입카드]</div>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">STEP 3</span>
-                    <div class="step-icon">📲</div>
-                    <div class="step-title">도어락 태그</div>
-                    <div class="step-desc">리더기에 스마트폰 대기</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Credit & Meeting Room Guide -->
-        <section class="section-card" id="credit">
-            <div class="card-num">SECTION 03</div>
-            <h2 class="card-title">📅 크레딧 정책 & 회의실 예약</h2>
-            <p class="card-desc">앱을 통해 선릉 1~5호점 및 선릉센트럴점 회의실을 크로스 예약할 수 있습니다.</p>
-
-            <table class="credit-table">
-                <thead>
-                    <tr>
-                        <th>공간 유형</th>
-                        <th>차감 정책</th>
-                        <th>취소 수칙</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>미팅룸 (4~12인)</strong></td>
-                        <td>30분당 1~3 크레딧</td>
-                        <td>시작 1시간 전 무료 취소</td>
-                    </tr>
-                    <tr>
-                        <td><strong>세미나룸 / 스튜디오</strong></td>
-                        <td>시간당 별도 차감</td>
-                        <td>시작 24시간 전 취소 가능</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- 4. FAQ -->
-        <section class="section-card" id="faq">
-            <div class="card-num">SECTION 04</div>
-            <h2 class="card-title">❓ 자주 묻는 질문 (FAQ)</h2>
-            <p class="card-desc">항목을 터치하시면 답변을 빠르게 확인하실 수 있습니다.</p>
-
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFaq(this)">🖨️ 복합기에 처음으로 출입카드를 등록하고 싶어요. <span>▼</span></div>
-                <div class="faq-a">복합기 터치스크린에서 [카드 등록]을 누른 뒤 출입카드를 태그하고, 본인의 패스트파이브 이메일 계정과 비밀번호를 입력하면 최초 1회 등록이 완료됩니다.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFaq(this)">🚗 방문객 주차 및 입출차 등록은 어떻게 하나요? <span>▼</span></div>
-                <div class="faq-a">패스트파이브 앱 내 [주차] 메뉴에서 차량 번호를 입력하고 무료 주차 쿠폰을 적용하시면 사전 정산이 완료됩니다.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFaq(this)">📩 외부 방문 손님은 어떻게 초청하나요? <span>▼</span></div>
-                <div class="faq-a">앱 내 [방문객 관리] 메뉴에서 초청 링크를 생성한 후 카카오톡이나 문자로 외부 손님에게 직접 전달하실 수 있습니다.</div>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- Floating Bottom Bar -->
-    <div class="bottom-bar">
-        <div class="bottom-inner">
+        <!-- Hero Banner -->
+        <section class="hero-banner">
             <div>
-                <div class="bottom-text">추가 문의가 있으신가요?</div>
-                <div class="bottom-sub">선릉 전담 매니저가 직접 답변해 드립니다.</div>
+                <h1 class="hero-title" id="dispHeroTitle">패스트파이브 선릉5호점<br>입주 멤버 안내 통합 센터</h1>
+                <p class="hero-desc" id="dispHeroDesc">지점 이용 수칙부터 비품 신청, 복합기, 크레딧 가이드까지 한눈에 확인하세요.</p>
             </div>
-            <a href="https://sf-fastfive.my.site.com/helpcenter/s/" target="_blank" class="btn-cs-large">💬 1:1 문의하기</a>
+            <a href="https://fastfive.co.kr/" target="_blank" style="background:#FFFFFF; color:var(--primary); padding:10px 18px; border-radius:12px; font-weight:800; font-size:0.88rem; text-decoration:none; white-space:nowrap;">공식 웹사이트 ↗</a>
+        </section>
+
+        <!-- Quick Grid Buttons (5종) -->
+        <div class="grid-menu">
+            <div class="grid-card" onclick="openModal('wifi')">
+                <div class="grid-icon">📶</div>
+                <div class="grid-label">Wi-Fi 연결</div>
+            </div>
+            <div class="grid-card" onclick="openModal('door')">
+                <div class="grid-icon">🚪</div>
+                <div class="grid-label">모바일 출입카드</div>
+            </div>
+            <div class="grid-card" onclick="openModal('printer')">
+                <div class="grid-icon">🖨️</div>
+                <div class="grid-label">복합기 가이드</div>
+            </div>
+            <div class="grid-card" onclick="openModal('benefits')">
+                <div class="grid-icon">🎁</div>
+                <div class="grid-label">제휴 혜택</div>
+            </div>
+            <div class="grid-card" onclick="openModal('credit-info')">
+                <div class="grid-icon">💳</div>
+                <div class="grid-label">크레딧 가이드</div>
+            </div>
+        </div>
+
+        <!-- Rendered Sections by JavaScript -->
+        <div id="dynamicSectionsContainer"></div>
+
+    </div>
+
+    <!-- MAIN POPUP MODAL -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div id="modalContent"></div>
         </div>
     </div>
+
+    <!-- PREVIEW MODAL (최상위 레이어) -->
+    <div class="modal-overlay" id="previewModalOverlay" onclick="closePreviewOutside(event)">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closePreviewModal()">✕</button>
+            <div id="previewModalContent"></div>
+        </div>
+    </div>
+
+    <!-- ADMIN MODAL OVERLAY (비밀번호 인증 성공 시 열림) -->
+    <div class="modal-overlay" id="adminModalOverlay" onclick="closeAdminOutside(event)">
+        <div class="admin-modal-card">
+            <button class="modal-close" onclick="closeAdminModal()">✕</button>
+            
+            <div class="admin-head-bar">
+                <div class="admin-title-text">
+                    <span>⚙️ 지점 가이드 통합 관리자 센터</span>
+                </div>
+                <div class="admin-btn-group">
+                    <button class="btn-adm btn-adm-preview" onclick="previewCurrentEditor()">👁️ 미리보기</button>
+                    <button class="btn-adm btn-adm-add" onclick="addNewTabPrompt()">+ 새 구분 탭</button>
+                    <button class="btn-adm btn-adm-save" onclick="saveAdminChanges()">💾 저장하기</button>
+                </div>
+            </div>
+
+            <!-- 관리자 모드 전용 지점 선택 드롭다운 -->
+            <div class="admin-form-group" style="background:#FFF7ED; border:1px solid #FFEDD5; padding:12px; border-radius:10px;">
+                <label class="admin-label" style="color:#C2410C;">🏢 수정할 지점 선택 (전 지점 통합 관리)</label>
+                <select id="admBranchSelect" class="search-input" style="padding:10px 14px; font-weight:800; color:#C2410C;" onchange="switchAdminBranch(this.value)">
+                    <option value="seolleung5">선릉5호점</option>
+                    <option value="seolleung1">선릉1호점</option>
+                    <option value="seolleung2">선릉2호점</option>
+                    <option value="seolleung3">선릉3호점</option>
+                    <option value="seolleung_central">선릉센트럴점</option>
+                </select>
+            </div>
+
+            <!-- 히어로 파란색 메인 배너 문구 직접 수정 박스 -->
+            <div class="banner-edit-box">
+                <label class="admin-label" style="color:#1E40AF;">🟦 상단 파란색 배너 문구 수정</label>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                    <div>
+                        <span style="font-size:0.8rem; font-weight:700; color:#1E40AF;">배너 대제목</span>
+                        <input type="text" id="admBannerTitleInput" class="search-input" style="padding:8px 12px; background:#fff;">
+                    </div>
+                    <div>
+                        <span style="font-size:0.8rem; font-weight:700; color:#1E40AF;">배너 서브 설명글</span>
+                        <input type="text" id="admBannerDescInput" class="search-input" style="padding:8px 12px; background:#fff;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-form-group">
+                <label class="admin-label">수정할 가이드 항목 선택</label>
+                <select id="admItemSelect" class="search-input" style="padding:10px 14px;" onchange="loadItemToEditor()">
+                    <!-- Populated via JavaScript -->
+                </select>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;" class="admin-form-group">
+                <div>
+                    <label class="admin-label">항목 대제목 (팝업 타이틀)</label>
+                    <input type="text" id="admTitleInput" class="search-input" style="padding:10px 14px;">
+                </div>
+                <div>
+                    <label class="admin-label">항목 요약 설명 (리스트 노출)</label>
+                    <input type="text" id="admSubInput" class="search-input" style="padding:10px 14px;">
+                </div>
+            </div>
+
+            <div class="admin-form-group">
+                <label class="admin-label">에디터 서식 도구 (대/중/소제목, 글자색, 밑줄, 이미지, 표 지원)</label>
+                <div class="editor-toolbar">
+                    <select class="editor-select" onchange="execCmd('formatBlock', this.value); this.selectedIndex=0;">
+                        <option value="">서식 선택</option>
+                        <option value="H1">대제목 (H1)</option>
+                        <option value="H2">중제목 (H2)</option>
+                        <option value="H3">소제목 (H3)</option>
+                        <option value="P">본문 (P)</option>
+                    </select>
+                    <button class="editor-btn" onclick="execCmd('bold')"><b>B</b></button>
+                    <button class="editor-btn" onclick="execCmd('italic')"><i>I</i></button>
+                    <button class="editor-btn" onclick="execCmd('underline')"><u>U</u></button>
+                    <button class="editor-btn" onclick="execCmd('insertUnorderedList')">• 목록</button>
+                    <button class="editor-btn" onclick="insertLinkPrompt()">🔗 링크</button>
+                    <button class="editor-btn" onclick="insertImagePrompt()">🖼️ 이미지</button>
+                    <button class="editor-btn" onclick="insertTable()">📊 표 삽입</button>
+                    <input type="color" onchange="execColor(this.value)" style="height:32px; border:none; cursor:pointer;" title="글자색">
+                </div>
+                <div class="editor-content" id="editorContent" contenteditable="true">
+                    <!-- Editable Content -->
+                </div>
+            </div>
+
+            <!-- Dedicated Password Management Box -->
+            <div class="password-section-box">
+                <div class="password-section-title">🔒 비밀번호 변경 설정 (독립 시스템)</div>
+                <p style="font-size:0.82rem; color:var(--text-sub); margin-bottom:10px;">관리자 로그인에 사용되는 비밀번호를 따로 변경하실 수 있습니다.</p>
+                <button onclick="changePasswordPrompt()" style="background:#334155; color:#fff; border:none; padding:8px 16px; border-radius:8px; font-weight:700; font-size:0.85rem; cursor:pointer;">🔑 비밀번호 변경하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Chatbot Widget -->
+    <a href="https://members.fastfive.co.kr/inquiry/create" target="_blank" class="chatbot-widget" title="매니저 1:1 문의">
+        <span class="chatbot-label">1:1 매니저 문의</span>
+        <div class="chatbot-icon">💬</div>
+    </a>
+
+    <!-- Extremely Subtle Stealth Footer -->
+    <footer>
+        본 가이드 웹사이트는 <span class="secret-trigger" onclick="triggerSecretLogin()">서지은</span>에 의해 제작 및 배포되었으며, 모든 권리 및 라이선스는 서지은에게 있습니다. 문제 발생 시 연락 바랍니다. (Email: je.seo@fastfive.co.kr)
+    </footer>
 
     <script>
-        function copyWifiPw() {
-            const pw = document.getElementById('wifi-pw').innerText;
-            navigator.clipboard.writeText(pw).then(() => {
-                const toast = document.getElementById('copy-toast');
-                toast.style.display = 'block';
-                setTimeout(() => { toast.style.display = 'none'; }, 2500);
+        // Admin Password Storage (Initial: 550428*)
+        let adminPassword = localStorage.getItem('ff_admin_pw') || "550428*";
+        let currentBranchKey = "seolleung5";
+
+        // Multi-Branch Database Container
+        let branchDataStore = JSON.parse(localStorage.getItem('ff_branch_datastore')) || {
+            'seolleung5': {
+                branchName: '선릉5호점',
+                heroTitle: '패스트파이브 선릉5호점\n입주 멤버 안내 통합 센터',
+                heroDesc: '지점 이용 수칙부터 비품 신청, 복합기, 크레딧 가이드까지 한눈에 확인하세요.',
+                masterTabs: ['전체보기', '웰컴 & 필수 가이드', '사무공간 & 비품', '크레딧 & 회의실', '제휴 혜택', '주차/택배/에티켓'],
+                items: {
+                    'welcome-letter': {
+                        cat: '웰컴 & 필수 가이드',
+                        badge: 'WELCOME GUIDE',
+                        title: '✉️ 패스트파이브 선릉5호점 웰컴레터 & 입주 OT',
+                        sub: '지점 주소, 운영시간, 와이파이, 앱 가입 가이드',
+                        body: '<h1>선릉5호점 기본 정보</h1><p>서울특별시 강남구 테헤란로77길 11-15 (선릉역 10번 출구 도보 7분, B2~13층)</p><h2>매니저 운영시간</h2><p>평일 09:30 ~ 18:30 (점심시간 12:00~13:00 제외)</p>'
+                    },
+                    'wifi': {
+                        cat: '웰컴 & 필수 가이드',
+                        badge: 'NETWORK',
+                        title: '📶 전 층 공용 Wi-Fi (five0401) 연결',
+                        sub: 'FASTFIVE_5G 비밀번호 자동 복사 및 유선 랜 이용법',
+                        body: '<h1>와이파이 접속 정보</h1><p>SSID: <strong>FASTFIVE_5G</strong></p><p>비밀번호: <span id="modal-pw-val" style="font-weight:800; color:#2563EB;">five0401</span></p><button class="btn-landing-action" onclick="copyWifiPw()">📋 비밀번호 복사하기</button>'
+                    },
+                    'door': {
+                        cat: '웰컴 & 필수 가이드',
+                        badge: 'ACCESS',
+                        title: '🚪 스마트폰 모바일 출입 카드 발급',
+                        sub: '패파 앱을 통한 스마트폰 태그 출입 가이드',
+                        body: '<h1>모바일 출입 카드 안내</h1><p>패스파이브 앱 로그인 ➡️ [모바일 출입카드] 선택 ➡️ 도어락 태그</p>'
+                    },
+                    'credit-info': {
+                        cat: '크레딧 & 회의실',
+                        badge: 'CREDIT POLICY',
+                        title: '💳 크레딧 차감 정책 & 회의실 가이드',
+                        sub: '30분당 1크레딧, 개인 1일 최대 6시간, 추가 구매 방법',
+                        body: '<h1>회의실 및 크레딧 안내</h1><p>30분당 1크레딧 차감. 평일 피크타임(12:00~18:00) 17인 이하 3크레딧 차감.</p><a href="https://credit-guide.fastfive.co.kr/" target="_blank" class="btn-landing-action">👉 크레딧 공식 가이드북 바로가기 ↗</a>'
+                    },
+                    'printer': {
+                        cat: '사무공간 & 비품',
+                        badge: 'PRINTER',
+                        title: '🖨️ 복합기 흑백/컬러 이용 가이드',
+                        sub: '흑백(월 200장 무료), 컬러 결제카드 등록 세팅',
+                        body: '<h1>복합기 안내</h1><p>흑백 인당 월 200장 무료. 컬러 print.fastfive.co.kr 로그인 후 결제 카드 등록 (A4: 110원 / A3: 220원)</p>'
+                    },
+                    'benefits': {
+                        cat: '제휴 혜택',
+                        badge: 'MEMBERS BENEFIT',
+                        title: '🎁 패스트파이브 멤버 단독 제휴 혜택',
+                        sub: '경영, 업무, 피트니스, F&B 카테고리별 단독 할인',
+                        body: '<h1>입주 멤버 단독 혜택</h1><p>소프트웨어, 법무, 세무, 피트니스 할인 제공</p><a href="https://members.fastfive.co.kr/benefits" target="_blank" class="btn-landing-action">🎁 제휴 혜택 전체보기 바로가기 ↗</a>'
+                    },
+                    'furniture': {
+                        cat: '사무공간 & 비품',
+                        badge: 'FURNITURE',
+                        title: '🪑 가구 제공 & 자산 이동 수칙',
+                        sub: '1인당 데스크/서랍장/의자 기본 제공, 반입/반출비 안내',
+                        body: '<h1>사무가구 안내</h1><p>1인당 데스크, 서랍장, 의자 기본 제공. 반입/반출 시 수량당 일회성 비용(데스크 1.5만, 서랍장 5천, 의자 1.5만 원) 발생.</p>'
+                    },
+                    'kitchen-fnb': {
+                        cat: '주차/택배/에티켓',
+                        badge: 'CANTEEN',
+                        title: '☕ F&B 바 & 냉장고 스티커 수칙',
+                        sub: '시리얼/우유 무료, 금요일 18시 냉장고 클리닝 수칙',
+                        body: '<h1>캔틴바 이용 수칙</h1><p>시리얼, 우유, 커피 무상 제공. 냉장고 보관 시 [호수/이름/보관기한] 스티커 필수 부착.</p>'
+                    }
+                }
+            }
+        };
+
+        // Initialize App
+        window.onload = function() {
+            ensureBranchExist('seolleung1', '선릉1호점');
+            ensureBranchExist('seolleung2', '선릉2호점');
+            ensureBranchExist('seolleung3', '선릉3호점');
+            ensureBranchExist('seolleung_central', '선릉센트럴점');
+
+            renderBranchView();
+        };
+
+        function ensureBranchExist(key, name) {
+            if (!branchDataStore[key]) {
+                branchDataStore[key] = JSON.parse(JSON.stringify(branchDataStore['seolleung5']));
+                branchDataStore[key].branchName = name;
+                branchDataStore[key].heroTitle = '패스트파이브 ' + name + '\n입주 멤버 안내 통합 센터';
+                branchDataStore[key].heroDesc = '지점 이용 수칙부터 비품 신청, 복합기, 크레딧 가이드까지 한눈에 확인하세요.';
+            }
+        }
+
+        function changeBranch(branchKey) {
+            currentBranchKey = branchKey;
+            document.getElementById('admBranchSelect').value = branchKey;
+            renderBranchView();
+        }
+
+        function switchAdminBranch(branchKey) {
+            currentBranchKey = branchKey;
+            document.getElementById('branchSelectHeader').value = branchKey;
+            renderBranchView();
+            loadItemToEditor();
+        }
+
+        function renderBranchView() {
+            const data = branchDataStore[currentBranchKey];
+            document.getElementById('dispHeroTitle').innerHTML = data.heroTitle.replace('\n', '<br>');
+            document.getElementById('dispHeroDesc').innerText = data.heroDesc;
+
+            document.getElementById('admBannerTitleInput').value = data.heroTitle;
+            document.getElementById('admBannerDescInput').value = data.heroDesc;
+
+            renderNavTabs();
+            renderSections();
+            populateAdminDropdown();
+        }
+
+        // Render Dynamic Tabs
+        function renderNavTabs() {
+            const data = branchDataStore[currentBranchKey];
+            const container = document.getElementById('dynamicTabsNav');
+            container.innerHTML = data.masterTabs.map((t, i) => `
+                <div class="tab-item ${i===0?'active':''}" onclick="switchCategory('${t}', this)">${t}</div>
+            `).join('');
+        }
+
+        // Render Dynamic Sections
+        function renderSections() {
+            const data = branchDataStore[currentBranchKey];
+            const container = document.getElementById('dynamicSectionsContainer');
+            const grouped = {};
+
+            Object.keys(data.items).forEach(key => {
+                const item = data.items[key];
+                if (!grouped[item.cat]) grouped[item.cat] = [];
+                grouped[item.cat].push({ key, ...item });
+            });
+
+            let html = '';
+            Object.keys(grouped).forEach(catName => {
+                html += `
+                    <section class="section-card category-sec" data-cat="${catName}">
+                        <div class="section-header">
+                            <div>
+                                <span class="section-badge">${catName.toUpperCase()}</span>
+                                <h2 class="section-title">${catName}</h2>
+                            </div>
+                        </div>
+                `;
+                grouped[catName].forEach(i => {
+                    html += `
+                        <div class="info-item searchable" onclick="openModal('${i.key}')">
+                            <div class="info-item-left">
+                                <div class="info-item-title">${i.title}</div>
+                                <div class="info-item-sub">${i.sub}</div>
+                            </div>
+                            <span class="info-arrow">보기 →</span>
+                        </div>
+                    `;
+                });
+                html += `</section>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Switch Category Tabs
+        function switchCategory(catName, el) {
+            document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+
+            document.querySelectorAll('.category-sec').forEach(sec => {
+                if (catName === '전체보기' || sec.getAttribute('data-cat') === catName) {
+                    sec.style.display = 'block';
+                } else {
+                    sec.style.display = 'none';
+                }
             });
         }
 
-        function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            if (answer.style.display === "block") {
-                answer.style.display = "none";
-            } else {
-                answer.style.display = "block";
+        // Modal Controls
+        function openModal(key) {
+            const data = branchDataStore[currentBranchKey].items[key];
+            if (!data) return;
+
+            document.getElementById('modalContent').innerHTML = `
+                <span class="modal-badge">${data.badge}</span>
+                <h2 class="modal-title">${data.title}</h2>
+                <div class="modal-body">${data.body}</div>
+            `;
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeModalOutside(e) {
+            if (e.target.id === 'modalOverlay') closeModal();
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModalOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeAdminOutside(e) {
+            if (e.target.id === 'adminModalOverlay') closeAdminModal();
+        }
+
+        function closePreviewModal() {
+            document.getElementById('previewModalOverlay').classList.remove('active');
+        }
+
+        function closePreviewOutside(e) {
+            if (e.target.id === 'previewModalOverlay') closePreviewModal();
+        }
+
+        function copyWifiPw() {
+            alert('✓ 와이파이 비밀번호(five0401)가 클립보드에 복사되었습니다!');
+        }
+
+        function filterContent() {
+            const q = document.getElementById('searchInput').value.toLowerCase().trim();
+            document.querySelectorAll('.searchable').forEach(item => {
+                item.style.display = item.innerText.toLowerCase().includes(q) ? 'flex' : 'none';
+            });
+        }
+
+        // Admin Stealth Trigger & Controls
+        function triggerSecretLogin() {
+            const pw = prompt("관리자 비밀번호를 입력하세요.", "");
+            if (pw === adminPassword) {
+                document.getElementById('adminModalOverlay').classList.add('active');
+                document.body.style.overflow = 'hidden';
+                document.getElementById('admBranchSelect').value = currentBranchKey;
+                loadItemToEditor();
+            } else if (pw !== null) {
+                alert("비밀번호가 올바르지 않습니다.");
             }
+        }
+
+        function changePasswordPrompt() {
+            const currentPw = prompt("현재 관리자 비밀번호를 입력하세요:", "");
+            if (currentPw === adminPassword) {
+                const newPw = prompt("새 관리자 비밀번호를 입력하세요:", "");
+                if (newPw) {
+                    adminPassword = newPw;
+                    localStorage.setItem('ff_admin_pw', newPw);
+                    alert("✓ 비밀번호가 성공적으로 변경되었습니다!");
+                }
+            } else if (currentPw !== null) {
+                alert("현재 비밀번호가 일치하지 않습니다.");
+            }
+        }
+
+        function populateAdminDropdown() {
+            const select = document.getElementById('admItemSelect');
+            const items = branchDataStore[currentBranchKey].items;
+            select.innerHTML = Object.keys(items).map(k => `
+                <option value="${k}">${items[k].title}</option>
+            `).join('');
+        }
+
+        function loadItemToEditor() {
+            const key = document.getElementById('admItemSelect').value;
+            const items = branchDataStore[currentBranchKey].items;
+            if (items[key]) {
+                document.getElementById('admTitleInput').value = items[key].title;
+                document.getElementById('admSubInput').value = items[key].sub;
+                document.getElementById('editorContent').innerHTML = items[key].body;
+            }
+        }
+
+        function previewCurrentEditor() {
+            const title = document.getElementById('admTitleInput').value;
+            const body = document.getElementById('editorContent').innerHTML;
+
+            document.getElementById('previewModalContent').innerHTML = `
+                <span class="modal-badge" style="background:#FFF1F2; color:var(--ff-orange);">PREVIEW</span>
+                <h2 class="modal-title">${title}</h2>
+                <div class="modal-body">${body}</div>
+            `;
+            document.getElementById('previewModalOverlay').classList.add('active');
+        }
+
+        // 창이 닫히지 않고 연속 저장되도록 수정된 로직
+        function saveAdminChanges() {
+            const key = document.getElementById('admItemSelect').value;
+            const branch = branchDataStore[currentBranchKey];
+
+            if (branch && branch.items[key]) {
+                // 배너 문구 업데이트
+                branch.heroTitle = document.getElementById('admBannerTitleInput').value;
+                branch.heroDesc = document.getElementById('admBannerDescInput').value;
+
+                // 항목 내용 업데이트
+                branch.items[key].title = document.getElementById('admTitleInput').value;
+                branch.items[key].sub = document.getElementById('admSubInput').value;
+                branch.items[key].body = document.getElementById('editorContent').innerHTML;
+
+                localStorage.setItem('ff_branch_datastore', JSON.stringify(branchDataStore));
+                renderBranchView();
+                alert("✓ 수정사항이 " + branch.branchName + " 프론트 화면에 성공적으로 연동 및 저장되었습니다!");
+                // 관리자 모달 창을 닫지 않고 계속 열어둠
+            }
+        }
+
+        function addNewTabPrompt() {
+            const tabName = prompt("새로 추가할 구분 탭(카테고리) 이름을 입력하세요:", "새 구분 탭");
+            const data = branchDataStore[currentBranchKey];
+
+            if (tabName && !data.masterTabs.includes(tabName)) {
+                data.masterTabs.push(tabName);
+                
+                const newKey = 'item_' + Date.now();
+                data.items[newKey] = {
+                    cat: tabName,
+                    badge: 'NEW',
+                    title: tabName + ' 안내 모듈',
+                    sub: '새로 추가된 항목입니다.',
+                    body: '<h1>' + tabName + ' 상세 내용</h1><p>에디터에서 수정해 주세요.</p>'
+                };
+
+                localStorage.setItem('ff_branch_datastore', JSON.stringify(branchDataStore));
+                renderNavTabs();
+                renderSections();
+                populateAdminDropdown();
+                alert("✓ 새 구분 탭과 항목이 추가되었습니다.");
+            }
+        }
+
+        // Executive Editor Commands
+        function execCmd(cmd, value=null) { document.execCommand(cmd, false, value); }
+        function execColor(color) { document.execCommand('foreColor', false, color); }
+        function insertLinkPrompt() {
+            const url = prompt("연결할 링크 주소:", "https://");
+            if (url) document.execCommand('createLink', false, url);
+        }
+        function insertImagePrompt() {
+            const url = prompt("이미지 URL 주소:", "https://");
+            if (url) document.execCommand('insertImage', false, url);
+        }
+        function insertTable() {
+            const html = `<table><thead><tr><th>구분</th><th>내용</th></tr></thead><tbody><tr><td>예시</td><td>데이터 입력</td></tr></tbody></table>`;
+            document.execCommand('insertHTML', false, html);
         }
     </script>
 </body>
