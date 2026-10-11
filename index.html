@@ -37,7 +37,7 @@
             padding-bottom: 40px;
         }
 
-        /* Top Header */
+        /* Header */
         header {
             position: sticky; top: 0; z-index: 100;
             background: #FFFFFF;
@@ -155,11 +155,6 @@
             display: none; align-items: center; justify-content: center; padding: 20px;
         }
         .modal-overlay.active { display: flex; }
-        
-        /* Preview Modal Layering (Highest Z-Index) */
-        #previewModalOverlay {
-            z-index: 2000 !important;
-        }
 
         .modal-card {
             background: #FFFFFF; border-radius: 24px; width: 100%; max-width: 680px;
@@ -241,13 +236,13 @@
             background: #FFFFFF; border-radius: 0 0 10px 10px; outline: none; font-size: 0.95rem; line-height: 1.6;
         }
 
-        /* Dedicated Password Management Box */
+        /* Password Box */
         .password-section-box {
             background: #F8FAFC; border: 1px solid var(--border-color); border-radius: 14px; padding: 16px; margin-top: 24px;
         }
         .password-section-title { font-size: 0.95rem; font-weight: 800; color: var(--text-title); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
 
-        /* Floating Chatbot Widget Icon */
+        /* Floating Chatbot Widget */
         .chatbot-widget {
             position: fixed; bottom: 24px; right: 20px; z-index: 500;
             display: flex; align-items: center; gap: 10px; text-decoration: none;
@@ -262,7 +257,7 @@
             font-size: 1.5rem; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4); cursor: pointer;
         }
 
-        /* Extremely Subtle Stealth Footer */
+        /* Footer */
         footer {
             max-width: 880px; margin: 40px auto 10px; padding: 16px 20px;
             border-top: 1px solid #F1F5F9;
@@ -296,7 +291,7 @@
         <div class="search-container">
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="키워드 검색 (예: 와이파이, 냉장고, 복합기, 크레딧, 혜택, 가구)" onkeyup="filterContent()">
+                <input type="text" id="searchInput" class="search-input" placeholder="키워드 검색 (예: 와이파이, 앱, 출입, 복합기, 크레딧, 주차)" onkeyup="filterContent()">
             </div>
         </div>
 
@@ -356,14 +351,14 @@
     </div>
 
     <!-- PREVIEW MODAL (최상위 레이어) -->
-    <div class="modal-overlay" id="previewModalOverlay" onclick="closePreviewOutside(event)">
+    <div class="modal-overlay" id="previewModalOverlay" onclick="closePreviewOutside(event)" style="z-index: 2000;">
         <div class="modal-card">
             <button class="modal-close" onclick="closePreviewModal()">✕</button>
             <div id="previewModalContent"></div>
         </div>
     </div>
 
-    <!-- ADMIN MODAL OVERLAY (비밀번호 인증 성공 시 열림) -->
+    <!-- ADMIN MODAL OVERLAY -->
     <div class="modal-overlay" id="adminModalOverlay" onclick="closeAdminOutside(event)">
         <div class="admin-modal-card">
             <button class="modal-close" onclick="closeAdminModal()">✕</button>
@@ -379,7 +374,7 @@
                 </div>
             </div>
 
-            <!-- 관리자 모드 전용 지점 선택 드롭다운 -->
+            <!-- 관리자 지점 선택 -->
             <div class="admin-form-group" style="background:#FFF7ED; border:1px solid #FFEDD5; padding:12px; border-radius:10px;">
                 <label class="admin-label" style="color:#C2410C;">🏢 수정할 지점 선택 (전 지점 통합 관리)</label>
                 <select id="admBranchSelect" class="search-input" style="padding:10px 14px; font-weight:800; color:#C2410C;" onchange="switchAdminBranch(this.value)">
@@ -391,7 +386,7 @@
                 </select>
             </div>
 
-            <!-- 히어로 파란색 메인 배너 문구 직접 수정 박스 -->
+            <!-- 메인 파란색 배너 직접 수정 -->
             <div class="banner-edit-box">
                 <label class="admin-label" style="color:#1E40AF;">🟦 상단 파란색 배너 문구 수정</label>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
@@ -448,10 +443,10 @@
                 </div>
             </div>
 
-            <!-- Dedicated Password Management Box -->
+            <!-- Password Change Box -->
             <div class="password-section-box">
                 <div class="password-section-title">🔒 비밀번호 변경 설정 (독립 시스템)</div>
-                <p style="font-size:0.82rem; color:var(--text-sub); margin-bottom:10px;">관리자 로그인에 사용되는 비밀번호를 따로 변경하실 수 있습니다.</p>
+                <p style="font-size:0.82rem; color:var(--text-sub); margin-bottom:10px;">관리자 로그인에 사용되는 비밀번호를 변경하실 수 있습니다.</p>
                 <button onclick="changePasswordPrompt()" style="background:#334155; color:#fff; border:none; padding:8px 16px; border-radius:8px; font-weight:700; font-size:0.85rem; cursor:pointer;">🔑 비밀번호 변경하기</button>
             </div>
         </div>
@@ -463,7 +458,7 @@
         <div class="chatbot-icon">💬</div>
     </a>
 
-    <!-- Extremely Subtle Stealth Footer -->
+    <!-- Footer -->
     <footer>
         본 가이드 웹사이트는 <span class="secret-trigger" onclick="triggerSecretLogin()">서지은</span>에 의해 제작 및 배포되었으며, 모든 권리 및 라이선스는 서지은에게 있습니다. 문제 발생 시 연락 바랍니다. (Email: je.seo@fastfive.co.kr)
     </footer>
@@ -473,7 +468,7 @@
         let adminPassword = localStorage.getItem('ff_admin_pw') || "550428*";
         let currentBranchKey = "seolleung5";
 
-        // Multi-Branch Database Container
+        // Multi-Branch Detailed Database Container
         let branchDataStore = JSON.parse(localStorage.getItem('ff_branch_datastore')) || {
             'seolleung5': {
                 branchName: '선릉5호점',
@@ -485,57 +480,154 @@
                         cat: '웰컴 & 필수 가이드',
                         badge: 'WELCOME GUIDE',
                         title: '✉️ 패스트파이브 선릉5호점 웰컴레터 & 입주 OT',
-                        sub: '지점 주소, 운영시간, 와이파이, 앱 가입 가이드',
-                        body: '<h1>선릉5호점 기본 정보</h1><p>서울특별시 강남구 테헤란로77길 11-15 (선릉역 10번 출구 도보 7분, B2~13층)</p><h2>매니저 운영시간</h2><p>평일 09:30 ~ 18:30 (점심시간 12:00~13:00 제외)</p>'
+                        sub: '지점 주소, 운영시간, 와이파이, 초대링크 인증 가이드',
+                        body: `
+                            <h1>지점 정보 및 이용 안내</h1>
+                            <p>서울특별시 강남구 테헤란로77길 11-15 (선릉역 10번 출구 도보 7분, B2~13층, 682평 규모)</p>
+                            <h2>커뮤니티 매니저 상주시간</h2>
+                            <p>평일 09:30 ~ 18:30 (점심시간 12:00~13:00 제외)</p>
+                            <h2>소속 그룹 등록 절차 (앱 가입 가이드)</h2>
+                            <ul>
+                                <li>1. 앱스토어/구글플레이에서 '패스트파이브' 앱 다운로드</li>
+                                <li>2. 사내 담당자/매니저에게 수령한 <strong>초대 링크(72시간 유효)</strong> 접속</li>
+                                <li>3. [승인 요청] ➡️ 그룹명 확인 후 [소속 확정] 클릭</li>
+                            </ul>
+                        `
                     },
                     'wifi': {
                         cat: '웰컴 & 필수 가이드',
                         badge: 'NETWORK',
                         title: '📶 전 층 공용 Wi-Fi (five0401) 연결',
                         sub: 'FASTFIVE_5G 비밀번호 자동 복사 및 유선 랜 이용법',
-                        body: '<h1>와이파이 접속 정보</h1><p>SSID: <strong>FASTFIVE_5G</strong></p><p>비밀번호: <span id="modal-pw-val" style="font-weight:800; color:#2563EB;">five0401</span></p><button class="btn-landing-action" onclick="copyWifiPw()">📋 비밀번호 복사하기</button>'
+                        body: `
+                            <h1>와이파이 접속 정보</h1>
+                            <p>지점 전 층에서 동일한 Wi-Fi 네트워크를 제공합니다.</p>
+                            <h3>네트워크 (SSID)</h3>
+                            <p><strong>FASTFIVE_5G</strong> (연결 불안정 시 FASTFIVE_2.4G)</p>
+                            <h3>비밀번호</h3>
+                            <p><span id="modal-pw-val" style="font-weight:800; color:#2563EB; font-size:1.1rem;">five0401</span></p>
+                            <button class="btn-landing-action" onclick="copyWifiPw()">📋 비밀번호 원클릭 복사하기</button>
+                            <h3>유선 인터넷 이용</h3>
+                            <p>사무공간 벽면 wall 랜 포트에 랜선을 연결하여 즉시 사용 가능합니다.</p>
+                        `
                     },
                     'door': {
                         cat: '웰컴 & 필수 가이드',
                         badge: 'ACCESS',
                         title: '🚪 스마트폰 모바일 출입 카드 발급',
-                        sub: '패파 앱을 통한 스마트폰 태그 출입 가이드',
-                        body: '<h1>모바일 출입 카드 안내</h1><p>패스파이브 앱 로그인 ➡️ [모바일 출입카드] 선택 ➡️ 도어락 태그</p>'
+                        sub: '패파 앱을 통한 스마트폰 태그 출입 가이드 (랜야드 재발급 3.3만원)',
+                        body: `
+                            <h1>모바일 출입 카드 이용안내</h1>
+                            <p>실물 카드 없이 스마트폰 앱 하나로 출입문을 해제할 수 있습니다.</p>
+                            <h2>발급 및 이용 방법</h2>
+                            <ul>
+                                <li>1. 패파 앱 로그인 ➡️ [출입카드] 탭 ➡️ [출입카드 발급] 터치</li>
+                                <li>2. 도어락 리더기에 스마트폰 대기 (태그 시 에어팝 기기에 녹색불 점등)</li>
+                            </ul>
+                            <h2>확인사항 및 실물 카드 정책</h2>
+                            <ul>
+                                <li>• 모바일 출입카드 상용화로 실물 카드키 키셋 제공 불가</li>
+                                <li>• 실물 랜야드 카드 재발급 필요 시 <strong>33,000원(VAT 포함)</strong> 발생</li>
+                                <li>• 인식 오류 시 아이폰 [블루투스 허용], 갤럭시 [NFC 카드모드] 재설정</li>
+                            </ul>
+                        `
                     },
                     'credit-info': {
                         cat: '크레딧 & 회의실',
                         badge: 'CREDIT POLICY',
                         title: '💳 크레딧 차감 정책 & 회의실 가이드',
                         sub: '30분당 1크레딧, 개인 1일 최대 6시간, 추가 구매 방법',
-                        body: '<h1>회의실 및 크레딧 안내</h1><p>30분당 1크레딧 차감. 평일 피크타임(12:00~18:00) 17인 이하 3크레딧 차감.</p><a href="https://credit-guide.fastfive.co.kr/" target="_blank" class="btn-landing-action">👉 크레딧 공식 가이드북 바로가기 ↗</a>'
+                        body: `
+                            <h1>회의실 예약 및 크레딧 차감 정책</h1>
+                            <p>선릉 1~5호점 및 선릉센트럴점 회의실을 크로스 예약하여 이용하실 수 있습니다.</p>
+                            <h2>차감 및 운영 수칙</h2>
+                            <ul>
+                                <li>• <strong>기본 차감:</strong> 30분당 1 크레딧 차감</li>
+                                <li>• <strong>피크타임 정책 (평일 12:00~18:00):</strong> 17인 이하 시간당 3크레딧 / 18인 이상 시간당 4크레딧 차감</li>
+                                <li>• <strong>이용 제한:</strong> 개인당 1일 최대 6시간 (그룹은 제한 없음)</li>
+                                <li>• <strong>취소 마감:</strong> 미팅룸 예약 시작 1시간 전까지 무료 취소</li>
+                            </ul>
+                            <a href="https://credit-guide.fastfive.co.kr/" target="_blank" class="btn-landing-action">👉 크레딧 공식 가이드북 바로가기 ↗</a>
+                        `
                     },
                     'printer': {
                         cat: '사무공간 & 비품',
                         badge: 'PRINTER',
-                        title: '🖨️ 복합기 흑백/컬러 이용 가이드',
+                        title: '🖨️ 복합기 흑백/컬러 이용 가이드 (신도리코 1588-5850)',
                         sub: '흑백(월 200장 무료), 컬러 결제카드 등록 세팅',
-                        body: '<h1>복합기 안내</h1><p>흑백 인당 월 200장 무료. 컬러 print.fastfive.co.kr 로그인 후 결제 카드 등록 (A4: 110원 / A3: 220원)</p>'
+                        body: `
+                            <h1>복합기 드라이버 및 결제 세팅</h1>
+                            <h2>1. 최초 흑백 인쇄 세팅</h2>
+                            <ul>
+                                <li>• 앱 [내계정] ➡️ [설정] ➡️ [복합기 계정등록] 전용 PW 설정</li>
+                                <li>• PC에서 <code>print.fastfive.co.kr</code> 접속 ➡️ 드라이버 및 Sindoh Cloud MPS 설치</li>
+                                <li>• <strong>흑백 인쇄:</strong> 인당 월 200장 무료 제공</li>
+                            </ul>
+                            <h2>2. 컬러 인쇄 카드 등록 (A4: 110원 / A3: 220원)</h2>
+                            <p><code>print.fastfive.co.kr</code> 접속 ➡️ [설정] ➡️ [카드관리]에서 법인/개인 결제카드 등록 후 이용</p>
+                            <h3>고객센터 및 장애 조치</h3>
+                            <p>신도리코 고객센터 <strong>1588-5850</strong> / 결제 오류 시 <code>print.fastfive.co.kr</code> - [My info] - [결제 이력] 재결제 진행</p>
+                        `
                     },
                     'benefits': {
                         cat: '제휴 혜택',
                         badge: 'MEMBERS BENEFIT',
                         title: '🎁 패스트파이브 멤버 단독 제휴 혜택',
                         sub: '경영, 업무, 피트니스, F&B 카테고리별 단독 할인',
-                        body: '<h1>입주 멤버 단독 혜택</h1><p>소프트웨어, 법무, 세무, 피트니스 할인 제공</p><a href="https://members.fastfive.co.kr/benefits" target="_blank" class="btn-landing-action">🎁 제휴 혜택 전체보기 바로가기 ↗</a>'
+                        body: `
+                            <h1>패스트파이브 입주 멤버 단독 혜택</h1>
+                            <p>업무 소프트웨어, 세무/법무 컨설팅, 호텔, 운동, F&B 브랜드 할인을 제공합니다.</p>
+                            <h2>카테고리별 대표 혜택</h2>
+                            <ul>
+                                <li>• <strong>업무/경영:</strong> AWS, Google Workspace, 네이버웍스 최대 40% 할인</li>
+                                <li>• <strong>라이프/웰니스:</strong> 피트니스, 종합검진, 호텔 숙박 할인 쿠폰 제공</li>
+                            </ul>
+                            <a href="https://members.fastfive.co.kr/benefits" target="_blank" class="btn-landing-action">🎁 제휴 혜택 전체보기 바로가기 ↗</a>
+                        `
                     },
                     'furniture': {
                         cat: '사무공간 & 비품',
                         badge: 'FURNITURE',
                         title: '🪑 가구 제공 & 자산 이동 수칙',
                         sub: '1인당 데스크/서랍장/의자 기본 제공, 반입/반출비 안내',
-                        body: '<h1>사무가구 안내</h1><p>1인당 데스크, 서랍장, 의자 기본 제공. 반입/반출 시 수량당 일회성 비용(데스크 1.5만, 서랍장 5천, 의자 1.5만 원) 발생.</p>'
+                        body: `
+                            <h1>사무가구 기본 제공 세트</h1>
+                            <p>1인당 데스크(1200*600), 서랍장, 의자 각 1세트 기본 제공</p>
+                            <h2>가구 반입 / 반출 신청 단가 (VAT 별도)</h2>
+                            <ul>
+                                <li>• <strong>데스크:</strong> 15,000원 / 개</li>
+                                <li>• <strong>서랍장:</strong> 5,000원 / 개</li>
+                                <li>• <strong>의자:</strong> 15,000원 / 개</li>
+                            </ul>
+                            <p>가구 반입/반출 희망 시 패파 앱 1:1 문의로 신청해 주세요.</p>
+                        `
                     },
                     'kitchen-fnb': {
                         cat: '주차/택배/에티켓',
-                        badge: 'CANTEEN',
-                        title: '☕ F&B 바 & 냉장고 스티커 수칙',
-                        sub: '시리얼/우유 무료, 금요일 18시 냉장고 클리닝 수칙',
-                        body: '<h1>캔틴바 이용 수칙</h1><p>시리얼, 우유, 커피 무상 제공. 냉장고 보관 시 [호수/이름/보관기한] 스티커 필수 부착.</p>'
+                        badge: 'CANTEEN & LIFE',
+                        title: '☕ F&B 바, 택배 & 이용 에티켓',
+                        sub: '시리얼/우유 무료, 1:1 문의(08~22시), 건물 전체 금연',
+                        body: `
+                            <h1>지점 캔틴바 & 이용 에티켓 상세 수칙</h1>
+                            <h2>1. F&B 바 및 취식 정책</h2>
+                            <ul>
+                                <li>• 시리얼, 우유/두유, 원두커피 무상 제공</li>
+                                <li>• 취식 가능 장소: 사무실, 1층 라운지, 13층 다이닝룸 (점심시간 11:00~14:00)</li>
+                                <li>• 취식 금지 공간: 미팅룸, 폰부스 (음료만 가능)</li>
+                                <li>• 공용 냉장고 스티커 필수 부착 (매주 금요일 18:00 미부착 음식물 폐기)</li>
+                            </ul>
+                            <h2>2. 우편물 & 택배 수령</h2>
+                            <ul>
+                                <li>• 1층 메일룸 수령 (주소 작성 시 반드시 사무실 호수+회사명 기재)</li>
+                                <li>• 등기 우편 및 카드는 직접 대면 수령 필수 (2개월 미수령 시 반송/폐기)</li>
+                            </ul>
+                            <h2>3. 기타 수칙</h2>
+                            <ul>
+                                <li>• 1:1 문의 운영시간: 평일 08:00 ~ 22:00 (주말/공휴일 휴무)</li>
+                                <li>• 대형폐기물 접수: 강남구 통합콜센터 태화용역(1522-3833) 직접 신청</li>
+                                <li>• 건물 내/외부 전체 금연 (전자담배 포함 절대 불가)</li>
+                            </ul>
+                        `
                     }
                 }
             }
@@ -757,25 +849,22 @@
             document.getElementById('previewModalOverlay').classList.add('active');
         }
 
-        // 창이 닫히지 않고 연속 저장되도록 수정된 로직
+        // 관리자 모달창을 닫지 않고 연속 저장
         function saveAdminChanges() {
             const key = document.getElementById('admItemSelect').value;
             const branch = branchDataStore[currentBranchKey];
 
             if (branch && branch.items[key]) {
-                // 배너 문구 업데이트
                 branch.heroTitle = document.getElementById('admBannerTitleInput').value;
                 branch.heroDesc = document.getElementById('admBannerDescInput').value;
 
-                // 항목 내용 업데이트
                 branch.items[key].title = document.getElementById('admTitleInput').value;
                 branch.items[key].sub = document.getElementById('admSubInput').value;
                 branch.items[key].body = document.getElementById('editorContent').innerHTML;
 
                 localStorage.setItem('ff_branch_datastore', JSON.stringify(branchDataStore));
                 renderBranchView();
-                alert("✓ 수정사항이 " + branch.branchName + " 프론트 화면에 성공적으로 연동 및 저장되었습니다!");
-                // 관리자 모달 창을 닫지 않고 계속 열어둠
+                alert("✓ 수정사항이 " + branch.branchName + " 프론트 화면에 연동 및 저장되었습니다!");
             }
         }
 
