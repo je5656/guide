@@ -37,6 +37,7 @@
             padding-bottom: 40px;
         }
 
+        /* Header */
         header {
             position: sticky; top: 0; z-index: 100;
             background: #FFFFFF;
@@ -76,6 +77,7 @@
         }
         .btn-official-site:hover { background: #0F172A; }
 
+        /* Search Bar */
         .search-container { max-width: 880px; margin: 0 auto; padding: 0 16px 14px; }
         .search-box { position: relative; display: flex; align-items: center; }
         .search-input {
@@ -86,6 +88,7 @@
         .search-input:focus { border-color: var(--primary); background: #FFFFFF; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
         .search-icon { position: absolute; left: 16px; font-size: 1.1rem; color: var(--text-sub); }
 
+        /* Navigation Tabs */
         .nav-tabs-wrapper {
             overflow-x: auto; white-space: nowrap; background: #FFFFFF; border-top: 1px solid #F1F5F9; scrollbar-width: none;
         }
@@ -97,8 +100,10 @@
         }
         .tab-item.active { color: var(--primary); border-bottom-color: var(--primary); }
 
+        /* Container */
         .container { max-width: 880px; margin: 0 auto; padding: 20px 16px; }
 
+        /* Hero Banner */
         .hero-banner {
             background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
             border-radius: 20px; padding: 28px 24px; color: #FFFFFF; margin-bottom: 20px;
@@ -107,6 +112,7 @@
         .hero-title { font-size: 1.55rem; font-weight: 800; line-height: 1.35; margin-bottom: 6px; }
         .hero-desc { font-size: 0.88rem; color: #DBEAFE; }
 
+        /* Grid Quick Buttons */
         .grid-menu {
             display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px;
         }
@@ -121,6 +127,7 @@
         .grid-icon { font-size: 1.6rem; margin-bottom: 4px; line-height: 1; }
         .grid-label { font-size: 0.82rem; font-weight: 700; color: var(--text-title); }
 
+        /* Section Cards */
         .section-card {
             background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px;
             padding: 24px 20px; margin-bottom: 20px;
@@ -129,6 +136,16 @@
         .section-badge { color: var(--primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; display: block; margin-bottom: 4px; }
         .section-title { font-size: 1.25rem; font-weight: 800; color: var(--text-title); }
 
+        /* Sub Category Heading */
+        .sub-cat-title {
+            font-size: 1.05rem; font-weight: 800; color: var(--primary); margin: 16px 0 10px 4px;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .sub-cat-title::before {
+            content: ""; display: inline-block; width: 4px; height: 16px; background: var(--primary); border-radius: 2px;
+        }
+
+        /* Interactive Info Item */
         .info-item {
             padding: 16px 18px; background: var(--bg-main); border: 1px solid var(--border-color);
             border-radius: 12px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;
@@ -140,6 +157,7 @@
         .info-item-sub { font-size: 0.83rem; color: var(--text-sub); margin-top: 4px; line-height: 1.4; }
         .info-arrow { color: var(--primary); font-weight: 700; font-size: 0.88rem; white-space: nowrap; flex-shrink: 0; }
 
+        /* Modal Overlay */
         .modal-overlay {
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); z-index: 999;
@@ -178,8 +196,9 @@
         }
         .btn-landing-action:hover { background: var(--primary-hover); }
 
+        /* Hidden Admin Panel Overlay */
         .admin-modal-card {
-            background: #FFFFFF; border-radius: 24px; width: 100%; max-width: 840px;
+            background: #FFFFFF; border-radius: 24px; width: 100%; max-width: 880px;
             max-height: 90vh; overflow-y: auto; padding: 32px 28px; position: relative; text-align: left;
             border: 2px solid var(--ff-orange); box-shadow: 0 20px 50px rgba(0,0,0,0.2);
         }
@@ -193,7 +212,7 @@
             font-size: 1.15rem; font-weight: 800; color: var(--ff-orange); display: flex; align-items: center; gap: 8px;
         }
 
-        .admin-btn-group { display: flex; align-items: center; gap: 8px; }
+        .admin-btn-group { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 
         .btn-adm {
             padding: 8px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 800; border: none; cursor: pointer;
@@ -202,6 +221,7 @@
         .btn-adm-save { background: var(--ff-orange); color: #FFFFFF; }
         .btn-adm-preview { background: #0284C7; color: #FFFFFF; }
         .btn-adm-add { background: #1E293B; color: #FFFFFF; }
+        .btn-adm-del { background: #EF4444; color: #FFFFFF; }
 
         .admin-form-group { margin-bottom: 16px; }
         .admin-label { font-size: 0.88rem; font-weight: 800; display: block; margin-bottom: 6px; color: var(--text-title); }
@@ -210,6 +230,11 @@
             background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; padding: 14px; margin-bottom: 18px;
         }
 
+        .category-manage-box {
+            background: #F8FAFC; border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; margin-bottom: 18px;
+        }
+
+        /* WYSIWYG Toolbar */
         .editor-toolbar {
             background: #F8FAFC; border: 1px solid var(--border-color); border-bottom: none;
             padding: 10px; border-radius: 10px 10px 0 0; display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
@@ -225,11 +250,13 @@
             background: #FFFFFF; border-radius: 0 0 10px 10px; outline: none; font-size: 0.95rem; line-height: 1.6;
         }
 
+        /* Password Box */
         .password-section-box {
             background: #F8FAFC; border: 1px solid var(--border-color); border-radius: 14px; padding: 16px; margin-top: 24px;
         }
         .password-section-title { font-size: 0.95rem; font-weight: 800; color: var(--text-title); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
 
+        /* Floating Chatbot Widget */
         .chatbot-widget {
             position: fixed; bottom: 24px; right: 20px; z-index: 500;
             display: flex; align-items: center; gap: 10px; text-decoration: none;
@@ -244,6 +271,7 @@
             font-size: 1.5rem; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4); cursor: pointer;
         }
 
+        /* Footer */
         footer {
             max-width: 880px; margin: 40px auto 10px; padding: 16px 20px;
             border-top: 1px solid #F1F5F9;
@@ -256,6 +284,7 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <div class="header-top">
             <a href="#" class="brand-logo">
@@ -288,6 +317,7 @@
 
     <div class="container">
 
+        <!-- Hero Banner -->
         <section class="hero-banner">
             <div>
                 <h1 class="hero-title" id="dispHeroTitle">패스트파이브 선릉5호점<br>입주 멤버 안내 통합 센터</h1>
@@ -296,6 +326,7 @@
             <a href="https://fastfive.co.kr/" target="_blank" style="background:#FFFFFF; color:var(--primary); padding:10px 18px; border-radius:12px; font-weight:800; font-size:0.88rem; text-decoration:none; white-space:nowrap;">공식 웹사이트 ↗</a>
         </section>
 
+        <!-- Quick Grid Buttons (5종) -->
         <div class="grid-menu">
             <div class="grid-card" onclick="openModal('wifi')">
                 <div class="grid-icon">📶</div>
@@ -323,6 +354,7 @@
 
     </div>
 
+    <!-- MAIN POPUP MODAL -->
     <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal()">✕</button>
@@ -330,6 +362,7 @@
         </div>
     </div>
 
+    <!-- PREVIEW MODAL -->
     <div class="modal-overlay" id="previewModalOverlay" onclick="closePreviewOutside(event)" style="z-index: 2000;">
         <div class="modal-card">
             <button class="modal-close" onclick="closePreviewModal()">✕</button>
@@ -337,21 +370,23 @@
         </div>
     </div>
 
+    <!-- ADMIN MODAL OVERLAY -->
     <div class="modal-overlay" id="adminModalOverlay" onclick="closeAdminOutside(event)">
         <div class="admin-modal-card">
             <button class="modal-close" onclick="closeAdminModal()">✕</button>
             
             <div class="admin-head-bar">
                 <div class="admin-title-text">
-                    <span>⚙️ 지점 가이드 통합 관리자 센터</span>
+                    <span>⚙️ 투트랙 지점 가이드 관리자 센터</span>
                 </div>
                 <div class="admin-btn-group">
                     <button class="btn-adm btn-adm-preview" onclick="previewCurrentEditor()">👁️ 미리보기</button>
-                    <button class="btn-adm btn-adm-add" onclick="addNewTabPrompt()">+ 새 구분 탭</button>
+                    <button class="btn-adm btn-adm-add" onclick="addNewItemPrompt()">+ 새 가이드 항목</button>
                     <button class="btn-adm btn-adm-save" onclick="saveAdminChanges()">💾 저장하기</button>
                 </div>
             </div>
 
+            <!-- 관리자 지점 선택 -->
             <div class="admin-form-group" style="background:#FFF7ED; border:1px solid #FFEDD5; padding:12px; border-radius:10px;">
                 <label class="admin-label" style="color:#C2410C;">🏢 수정할 지점 선택 (전 지점 통합 관리)</label>
                 <select id="admBranchSelect" class="search-input" style="padding:10px 14px; font-weight:800; color:#C2410C;" onchange="switchAdminBranch(this.value)">
@@ -363,6 +398,16 @@
                 </select>
             </div>
 
+            <!-- 카테고리(대/중) 관리 도구 -->
+            <div class="category-manage-box">
+                <label class="admin-label" style="color:#1E293B; margin-bottom:8px;">📁 카테고리 구조 관리 (투트랙 설정)</label>
+                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                    <button class="btn-adm btn-adm-add" onclick="addNewMainTabPrompt()">+ 대카테고리(상단 탭) 추가</button>
+                    <button class="btn-adm btn-adm-add" onclick="addNewSubCatPrompt()">+ 중카테고리(소제목) 추가</button>
+                </div>
+            </div>
+
+            <!-- 메인 파란색 배너 직접 수정 -->
             <div class="banner-edit-box">
                 <label class="admin-label" style="color:#1E40AF;">🟦 상단 파란색 배너 문구 수정</label>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
@@ -377,10 +422,28 @@
                 </div>
             </div>
             
+            <!-- 항목 선택 및 카테고리 재배치 -->
             <div class="admin-form-group">
-                <label class="admin-label">수정할 가이드 항목 선택</label>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <label class="admin-label" style="margin-bottom:0;">수정할 가이드 항목 선택</label>
+                    <button class="btn-adm btn-adm-del" style="padding:4px 8px; font-size:0.75rem;" onclick="deleteCurrentItem()">🗑️ 항목 삭제</button>
+                </div>
                 <select id="admItemSelect" class="search-input" style="padding:10px 14px;" onchange="loadItemToEditor()">
                 </select>
+            </div>
+
+            <!-- 투트랙 카테고리 이동 드롭다운 -->
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;" class="admin-form-group">
+                <div>
+                    <label class="admin-label">소속 대카테고리 (상단 탭)</label>
+                    <select id="admMainCatSelect" class="search-input" style="padding:10px 14px;" onchange="updateSubCatDropdowns()">
+                    </select>
+                </div>
+                <div>
+                    <label class="admin-label">소속 중카테고리 (소제목 섹션)</label>
+                    <select id="admSubCatSelect" class="search-input" style="padding:10px 14px;">
+                    </select>
+                </div>
             </div>
 
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;" class="admin-form-group">
@@ -417,6 +480,7 @@
                 </div>
             </div>
 
+            <!-- Password Box -->
             <div class="password-section-box">
                 <div class="password-section-title">🔒 비밀번호 변경 설정 (독립 시스템)</div>
                 <p style="font-size:0.82rem; color:var(--text-sub); margin-bottom:10px;">관리자 로그인에 사용되는 비밀번호를 변경하실 수 있습니다.</p>
@@ -438,15 +502,23 @@
         let adminPassword = localStorage.getItem('ff_admin_pw') || "550428*";
         let currentBranchKey = "seolleung5";
 
-        let branchDataStore = JSON.parse(localStorage.getItem('ff_branch_datastore')) || {
+        let branchDataStore = JSON.parse(localStorage.getItem('ff_branch_datastore_v2')) || {
             'seolleung5': {
                 branchName: '선릉5호점',
                 heroTitle: '패스트파이브 선릉5호점\n입주 멤버 안내 통합 센터',
                 heroDesc: '지점 이용 수칙부터 비품 신청, 복합기, 크레딧 가이드까지 한눈에 확인하세요.',
                 masterTabs: ['전체보기', '웰컴 & 필수 가이드', '사무공간 & 비품', '크레딧 & 회의실', '제휴 혜택', '주차/택배/에티켓'],
+                subCategories: {
+                    '웰컴 & 필수 가이드': ['웰컴 & 지점 안내', '네트워크 & 출입'],
+                    '사무공간 & 비품': ['사무 가구 & 전력', '복합기 & OA'],
+                    '크레딧 & 회의실': ['크레딧 정책', '회의실 이용'],
+                    '제휴 혜택': ['멤버십 전용 혜택'],
+                    '주차/택배/에티켓': ['캔틴 & 키친', '택배 & 메일룸', '시설 에티켓']
+                },
                 items: {
                     'welcome-letter': {
-                        cat: '웰컴 & 필수 가이드',
+                        mainCat: '웰컴 & 필수 가이드',
+                        subCat: '웰컴 & 지점 안내',
                         badge: 'WELCOME GUIDE',
                         title: '✉️ 패스트파이브 선릉5호점 웰컴레터 & 입주 OT',
                         sub: '지점 주소, 운영시간, 와이파이, 초대링크 인증 가이드',
@@ -464,7 +536,8 @@
                         `
                     },
                     'wifi': {
-                        cat: '웰컴 & 필수 가이드',
+                        mainCat: '웰컴 & 필수 가이드',
+                        subCat: '네트워크 & 출입',
                         badge: 'NETWORK',
                         title: '📶 전 층 공용 Wi-Fi (five0401) 연결',
                         sub: 'FASTFIVE_5G 비밀번호 자동 복사 및 유선 랜 이용법',
@@ -481,7 +554,8 @@
                         `
                     },
                     'door': {
-                        cat: '웰컴 & 필수 가이드',
+                        mainCat: '웰컴 & 필수 가이드',
+                        subCat: '네트워크 & 출입',
                         badge: 'ACCESS',
                         title: '🚪 스마트폰 모바일 출입 카드 발급',
                         sub: '패파 앱을 통한 스마트폰 태그 출입 가이드 (랜야드 재발급 3.3만원)',
@@ -501,26 +575,27 @@
                             </ul>
                         `
                     },
-                    'credit-info': {
-                        cat: '크레딧 & 회의실',
-                        badge: 'CREDIT POLICY',
-                        title: '💳 크레딧 차감 정책 & 회의실 가이드',
-                        sub: '30분당 1크레딧, 개인 1일 최대 6시간, 추가 구매 방법',
+                    'furniture': {
+                        mainCat: '사무공간 & 비품',
+                        subCat: '사무 가구 & 전력',
+                        badge: 'FURNITURE',
+                        title: '🪑 가구 제공 & 자산 이동 수칙',
+                        sub: '1인당 데스크/서랍장/의자 기본 제공, 반입/반출비 안내',
                         body: `
-                            <h1>회의실 예약 및 크레딧 차감 정책</h1>
-                            <p>선릉 1~5호점 및 선릉센트럴점 회의실을 크로스 예약하여 이용하실 수 있습니다.</p>
-                            <h2>차감 및 운영 수칙</h2>
+                            <h1>사무가구 기본 제공 세트</h1>
+                            <p>1인당 데스크(1200*600), 서랍장, 의자 각 1세트 기본 제공</p>
+                            <h2>가구 반입 / 반출 신청 단가 (VAT 별도)</h2>
                             <ul>
-                                <li>• <strong>기본 차감:</strong> 30분당 1 크레딧 차감</li>
-                                <li>• <strong>피크타임 정책 (평일 12:00~18:00):</strong> 17인 이하 시간당 3크레딧 / 18인 이상 시간당 4크레딧 차감</li>
-                                <li>• <strong>이용 제한:</strong> 개인당 1일 최대 6시간 (그룹은 제한 없음)</li>
-                                <li>• <strong>취소 마감:</strong> 미팅룸 예약 시작 1시간 전까지 무료 취소</li>
+                                <li>• <strong>데스크:</strong> 15,000원 / 개</li>
+                                <li>• <strong>서랍장:</strong> 5,000원 / 개</li>
+                                <li>• <strong>의자:</strong> 15,000원 / 개</li>
                             </ul>
-                            <a href="https://credit-guide.fastfive.co.kr/" target="_blank" class="btn-landing-action">👉 크레딧 공식 가이드북 바로가기 ↗</a>
+                            <p>가구 반입/반출 희망 시 패파 앱 1:1 문의로 신청해 주세요.</p>
                         `
                     },
                     'printer': {
-                        cat: '사무공간 & 비품',
+                        mainCat: '사무공간 & 비품',
+                        subCat: '복합기 & OA',
                         badge: 'PRINTER',
                         title: '🖨️ 복합기 흑백/컬러 이용 가이드 (신도리코 1588-5850)',
                         sub: '흑백(월 200장 무료), 컬러 결제카드 등록 세팅',
@@ -538,8 +613,28 @@
                             <p>신도리코 고객센터 <strong>1588-5850</strong> / 결제 오류 시 <code>print.fastfive.co.kr</code> - [My info] - [결제 이력] 재결제 진행[cite: 70, 71]</p>
                         `
                     },
+                    'credit-info': {
+                        mainCat: '크레딧 & 회의실',
+                        subCat: '크레딧 정책',
+                        badge: 'CREDIT POLICY',
+                        title: '💳 크레딧 차감 정책 & 회의실 가이드',
+                        sub: '30분당 1크레딧, 개인 1일 최대 6시간, 추가 구매 방법',
+                        body: `
+                            <h1>회의실 예약 및 크레딧 차감 정책</h1>
+                            <p>선릉 1~5호점 및 선릉센트럴점 회의실을 크로스 예약하여 이용하실 수 있습니다.</p>
+                            <h2>차감 및 운영 수칙</h2>
+                            <ul>
+                                <li>• <strong>기본 차감:</strong> 30분당 1 크레딧 차감</li>
+                                <li>• <strong>피크타임 정책 (평일 12:00~18:00):</strong> 17인 이하 시간당 3크레딧 / 18인 이상 시간당 4크레딧 차감</li>
+                                <li>• <strong>이용 제한:</strong> 개인당 1일 최대 6시간 (그룹은 제한 없음)</li>
+                                <li>• <strong>취소 마감:</strong> 미팅룸 예약 시작 1시간 전까지 무료 취소</li>
+                            </ul>
+                            <a href="https://credit-guide.fastfive.co.kr/" target="_blank" class="btn-landing-action">👉 크레딧 공식 가이드북 바로가기 ↗</a>
+                        `
+                    },
                     'benefits': {
-                        cat: '제휴 혜택',
+                        mainCat: '제휴 혜택',
+                        subCat: '멤버십 전용 혜택',
                         badge: 'MEMBERS BENEFIT',
                         title: '🎁 패스트파이브 멤버 단독 제휴 혜택',
                         sub: '경영, 업무, 피트니스, F&B 카테고리별 단독 할인',
@@ -554,25 +649,9 @@
                             <a href="https://members.fastfive.co.kr/benefits" target="_blank" class="btn-landing-action">🎁 제휴 혜택 전체보기 바로가기 ↗</a>
                         `
                     },
-                    'furniture': {
-                        cat: '사무공간 & 비품',
-                        badge: 'FURNITURE',
-                        title: '🪑 가구 제공 & 자산 이동 수칙',
-                        sub: '1인당 데스크/서랍장/의자 기본 제공, 반입/반출비 안내',
-                        body: `
-                            <h1>사무가구 기본 제공 세트</h1>
-                            <p>1인당 데스크(1200*600), 서랍장, 의자 각 1세트 기본 제공</p>
-                            <h2>가구 반입 / 반출 신청 단가 (VAT 별도)</h2>
-                            <ul>
-                                <li>• <strong>데스크:</strong> 15,000원 / 개</li>
-                                <li>• <strong>서랍장:</strong> 5,000원 / 개</li>
-                                <li>• <strong>의자:</strong> 15,000원 / 개</li>
-                            </ul>
-                            <p>가구 반입/반출 희망 시 패파 앱 1:1 문의로 신청해 주세요.</p>
-                        `
-                    },
                     'kitchen-fnb': {
-                        cat: '주차/택배/에티켓',
+                        mainCat: '주차/택배/에티켓',
+                        subCat: '캔틴 & 키친',
                         badge: 'CANTEEN & LIFE',
                         title: '☕ F&B 바, 택배 & 이용 에티켓',
                         sub: '시리얼/우유 무료, 1:1 문의(08~22시), 건물 전체 금연',
@@ -657,36 +736,49 @@
         function renderSections() {
             const data = branchDataStore[currentBranchKey];
             const container = document.getElementById('dynamicSectionsContainer');
-            const grouped = {};
+            
+            // 대카테고리 ➔ 중카테고리 ➔ 항목 3단계 그룹핑
+            const mainGrouped = {};
 
             Object.keys(data.items).forEach(key => {
                 const item = data.items[key];
-                if (!grouped[item.cat]) grouped[item.cat] = [];
-                grouped[item.cat].push({ key, ...item });
+                const mainCat = item.mainCat || '기타';
+                const subCat = item.subCat || '일반';
+
+                if (!mainGrouped[mainCat]) mainGrouped[mainCat] = {};
+                if (!mainGrouped[mainCat][subCat]) mainGrouped[mainCat][subCat] = [];
+
+                mainGrouped[mainCat][subCat].push({ key, ...item });
             });
 
             let html = '';
-            Object.keys(grouped).forEach(catName => {
+            Object.keys(mainGrouped).forEach(mainCatName => {
                 html += `
-                    <section class="section-card category-sec" data-cat="${catName}">
+                    <section class="section-card category-sec" data-cat="${mainCatName}">
                         <div class="section-header">
                             <div>
-                                <span class="section-badge">${catName.toUpperCase()}</span>
-                                <h2 class="section-title">${catName}</h2>
+                                <span class="section-badge">${mainCatName.toUpperCase()}</span>
+                                <h2 class="section-title">${mainCatName}</h2>
                             </div>
                         </div>
                 `;
-                grouped[catName].forEach(i => {
-                    html += `
-                        <div class="info-item searchable" onclick="openModal('${i.key}')">
-                            <div class="info-item-left">
-                                <div class="info-item-title">${i.title}</div>
-                                <div class="info-item-sub">${i.sub}</div>
+
+                const subGroup = mainGrouped[mainCatName];
+                Object.keys(subGroup).forEach(subCatName => {
+                    html += `<div class="sub-cat-title">${subCatName}</div>`;
+                    subGroup[subCatName].forEach(i => {
+                        html += `
+                            <div class="info-item searchable" onclick="openModal('${i.key}')">
+                                <div class="info-item-left">
+                                    <div class="info-item-title">${i.title}</div>
+                                    <div class="info-item-sub">${i.sub}</div>
+                                </div>
+                                <span class="info-arrow">보기 →</span>
                             </div>
-                            <span class="info-arrow">보기 →</span>
-                        </div>
-                    `;
+                        `;
+                    });
                 });
+
                 html += `</section>`;
             });
 
@@ -756,12 +848,14 @@
             });
         }
 
+        // Admin Controls
         function triggerSecretLogin() {
             const pw = prompt("관리자 비밀번호를 입력하세요.", "");
             if (pw === adminPassword) {
                 document.getElementById('adminModalOverlay').classList.add('active');
                 document.body.style.overflow = 'hidden';
                 document.getElementById('admBranchSelect').value = currentBranchKey;
+                populateAdminDropdown();
                 loadItemToEditor();
             } else if (pw !== null) {
                 alert("비밀번호가 올바르지 않습니다.");
@@ -786,8 +880,25 @@
             const select = document.getElementById('admItemSelect');
             const items = branchDataStore[currentBranchKey].items;
             select.innerHTML = Object.keys(items).map(k => `
-                <option value="${k}">${items[k].title}</option>
+                <option value="${k}">[${items[k].mainCat} > ${items[k].subCat}] ${items[k].title}</option>
             `).join('');
+
+            populateMainCatDropdown();
+        }
+
+        function populateMainCatDropdown() {
+            const select = document.getElementById('admMainCatSelect');
+            const tabs = branchDataStore[currentBranchKey].masterTabs.filter(t => t !== '전체보기');
+            select.innerHTML = tabs.map(t => `<option value="${t}">${t}</option>`).join('');
+            updateSubCatDropdowns();
+        }
+
+        function updateSubCatDropdowns() {
+            const mainCat = document.getElementById('admMainCatSelect').value;
+            const subSelect = document.getElementById('admSubCatSelect');
+            const subCats = (branchDataStore[currentBranchKey].subCategories && branchDataStore[currentBranchKey].subCategories[mainCat]) || ['일반'];
+            
+            subSelect.innerHTML = subCats.map(s => `<option value="${s}">${s}</option>`).join('');
         }
 
         function loadItemToEditor() {
@@ -797,6 +908,10 @@
                 document.getElementById('admTitleInput').value = items[key].title;
                 document.getElementById('admSubInput').value = items[key].sub;
                 document.getElementById('editorContent').innerHTML = items[key].body;
+
+                if (items[key].mainCat) document.getElementById('admMainCatSelect').value = items[key].mainCat;
+                updateSubCatDropdowns();
+                if (items[key].subCat) document.getElementById('admSubCatSelect').value = items[key].subCat;
             }
         }
 
@@ -822,38 +937,94 @@
 
                 branch.items[key].title = document.getElementById('admTitleInput').value;
                 branch.items[key].sub = document.getElementById('admSubInput').value;
+                branch.items[key].mainCat = document.getElementById('admMainCatSelect').value;
+                branch.items[key].subCat = document.getElementById('admSubCatSelect').value;
                 branch.items[key].body = document.getElementById('editorContent').innerHTML;
 
-                localStorage.setItem('ff_branch_datastore', JSON.stringify(branchDataStore));
+                localStorage.setItem('ff_branch_datastore_v2', JSON.stringify(branchDataStore));
                 renderBranchView();
                 alert("✓ 수정사항이 " + branch.branchName + " 프론트 화면에 연동 및 저장되었습니다!");
             }
         }
 
-        function addNewTabPrompt() {
-            const tabName = prompt("새로 추가할 구분 탭(카테고리) 이름을 입력하세요:", "새 구분 탭");
+        function addNewMainTabPrompt() {
+            const tabName = prompt("새로 추가할 대카테고리(상단 탭) 이름을 입력하세요:", "새 구분 탭");
             const data = branchDataStore[currentBranchKey];
 
             if (tabName && !data.masterTabs.includes(tabName)) {
                 data.masterTabs.push(tabName);
-                
-                const newKey = 'item_' + Date.now();
-                data.items[newKey] = {
-                    cat: tabName,
-                    badge: 'NEW',
-                    title: tabName + ' 안내 모듈',
-                    sub: '새로 추가된 항목입니다.',
-                    body: '<h1>' + tabName + ' 상세 내용</h1><p>에디터에서 수정해 주세요.</p>'
-                };
+                if (!data.subCategories) data.subCategories = {};
+                data.subCategories[tabName] = ['일반'];
 
-                localStorage.setItem('ff_branch_datastore', JSON.stringify(branchDataStore));
+                localStorage.setItem('ff_branch_datastore_v2', JSON.stringify(branchDataStore));
                 renderNavTabs();
-                renderSections();
-                populateAdminDropdown();
-                alert("✓ 새 구분 탭과 항목이 추가되었습니다.");
+                populateMainCatDropdown();
+                alert("✓ 새 대카테고리가 추가되었습니다.");
             }
         }
 
+        function addNewSubCatPrompt() {
+            const mainCat = document.getElementById('admMainCatSelect').value;
+            const subName = prompt("[" + mainCat + "] 하위에 추가할 중카테고리(소제목) 이름을 입력하세요:", "새 소제목");
+            const data = branchDataStore[currentBranchKey];
+
+            if (subName) {
+                if (!data.subCategories) data.subCategories = {};
+                if (!data.subCategories[mainCat]) data.subCategories[mainCat] = [];
+
+                if (!data.subCategories[mainCat].includes(subName)) {
+                    data.subCategories[mainCat].push(subName);
+                    localStorage.setItem('ff_branch_datastore_v2', JSON.stringify(branchDataStore));
+                    updateSubCatDropdowns();
+                    alert("✓ 중카테고리가 추가되었습니다.");
+                }
+            }
+        }
+
+        function addNewItemPrompt() {
+            const title = prompt("새 가이드 항목의 제목을 입력하세요:", "새 안내 모듈");
+            const data = branchDataStore[currentBranchKey];
+
+            if (title) {
+                const newKey = 'item_' + Date.now();
+                const currentMain = document.getElementById('admMainCatSelect').value || '웰컴 & 필수 가이드';
+                const currentSub = document.getElementById('admSubCatSelect').value || '일반';
+
+                data.items[newKey] = {
+                    mainCat: currentMain,
+                    subCat: currentSub,
+                    badge: 'NEW',
+                    title: title,
+                    sub: '새로 추가된 안내 모듈입니다.',
+                    body: '<h1>' + title + ' 상세 내용</h1><p>에디터에서 내용을 작성하세요.</p>'
+                };
+
+                localStorage.setItem('ff_branch_datastore_v2', JSON.stringify(branchDataStore));
+                renderSections();
+                populateAdminDropdown();
+                document.getElementById('admItemSelect').value = newKey;
+                loadItemToEditor();
+                alert("✓ 새 가이드 항목이 추가되었습니다.");
+            }
+        }
+
+        function deleteCurrentItem() {
+            const key = document.getElementById('admItemSelect').value;
+            const data = branchDataStore[currentBranchKey];
+
+            if (key && data.items[key]) {
+                if (confirm("정말로 '" + data.items[key].title + "' 항목을 삭제하시겠습니까?")) {
+                    delete data.items[key];
+                    localStorage.setItem('ff_branch_datastore_v2', JSON.stringify(branchDataStore));
+                    renderSections();
+                    populateAdminDropdown();
+                    loadItemToEditor();
+                    alert("✓ 항목이 삭제되었습니다.");
+                }
+            }
+        }
+
+        // Executive Editor Commands
         function execCmd(cmd, value=null) { document.execCommand(cmd, false, value); }
         function execColor(color) { document.execCommand('foreColor', false, color); }
         function insertLinkPrompt() {
