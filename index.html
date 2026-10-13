@@ -24,12 +24,10 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-tap-highlight-color: transparent; }
-
         body { background-color: var(--bg-main); color: var(--text-body); line-height: 1.6; padding-bottom: 40px; }
 
-        /* Fixed Header */
+        /* Fixed Top Header (스크롤 시 상단 고정) */
         header { position: sticky; top: 0; z-index: 1000; background: #FFFFFF; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
-
         .header-top { padding: 12px 20px 8px; display: flex; justify-content: space-between; align-items: center; max-width: 880px; margin: 0 auto; gap: 12px; }
         .brand-logo { font-weight: 800; font-size: 1.15rem; color: var(--text-title); display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap; }
         .brand-badge { background: var(--primary-light); color: var(--primary); font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; }
@@ -51,6 +49,7 @@
         .tab-item { padding: 10px 16px; font-size: 0.9rem; font-weight: 700; color: var(--text-sub); text-decoration: none; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.2s; }
         .tab-item.active { color: var(--primary); border-bottom-color: var(--primary); }
 
+        /* Container */
         .container { max-width: 880px; margin: 0 auto; padding: 20px 16px; }
 
         .hero-banner { background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); border-radius: 20px; padding: 26px 22px; color: #FFFFFF; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15); display: flex; justify-content: space-between; align-items: center; }
@@ -70,6 +69,7 @@
         .section-badge { color: var(--primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; display: block; margin-bottom: 4px; }
         .section-title { font-size: 1.2rem; font-weight: 800; color: var(--text-title); }
 
+        /* Sub Category Heading */
         .sub-cat-title { font-size: 1rem; font-weight: 800; color: var(--primary); margin: 16px 0 10px 2px; display: flex; align-items: center; gap: 6px; }
         .sub-cat-title::before { content: ""; display: inline-block; width: 4px; height: 14px; background: var(--primary); border-radius: 2px; }
 
@@ -102,8 +102,8 @@
         .btn-landing-action { display: inline-block; background: var(--primary); color: #FFFFFF; font-weight: 800; padding: 10px 18px; border-radius: 10px; text-decoration: none; margin-top: 12px; font-size: 0.88rem; transition: background 0.2s; }
         .btn-landing-action:hover { background: var(--primary-hover); }
 
-        /* Admin Panel Overlay */
-        .admin-modal-card { background: #FFFFFF; border-radius: 20px; width: 100%; max-width: 840px; max-height: 90vh; overflow-y: auto; padding: 24px 20px; position: relative; text-align: left; border: 2px solid var(--ff-orange); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+        /* Admin Panel Overlay (아코디언 구조) */
+        .admin-modal-card { background: #FFFFFF; border-radius: 20px; width: 100%; max-width: 820px; max-height: 90vh; overflow-y: auto; padding: 24px 20px; position: relative; text-align: left; border: 2px solid var(--ff-orange); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
         .admin-head-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid #F1F5F9; gap: 8px; flex-wrap: wrap; }
         .admin-title-text { font-size: 1.1rem; font-weight: 800; color: var(--ff-orange); display: flex; align-items: center; gap: 6px; }
         .admin-btn-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
@@ -270,7 +270,7 @@
                 </div>
             </div>
 
-            <!-- 아코디언 2: 카테고리(대/중) 관리 및 이름/순서 수정 -->
+            <!-- 아코디언 2: 카테고리(대/중) 관리 -->
             <div class="admin-accordion">
                 <div class="admin-accordion-head" onclick="toggleAccordion('acc-category')">
                     <span>📁 2. 카테고리 관리 (이름 변경 / 순서 변경)</span>
@@ -278,7 +278,6 @@
                 </div>
                 <div class="admin-accordion-body active" id="acc-category">
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-                        <!-- 대카테고리 관리 -->
                         <div>
                             <label class="admin-label">대카테고리 (상단 탭)</label>
                             <select id="admManageMainTabSelect" class="search-input" style="padding:8px 10px; margin-bottom:8px;" onchange="populateSubCatManageDropdown()">
@@ -290,7 +289,6 @@
                                 <button class="btn-adm btn-adm-edit" style="padding:4px 8px; font-size:0.75rem;" onclick="moveMainTab('down')">▼ 아래로</button>
                             </div>
                         </div>
-                        <!-- 중카테고리 관리 -->
                         <div>
                             <label class="admin-label">중카테고리 (소제목)</label>
                             <select id="admManageSubCatSelect" class="search-input" style="padding:8px 10px; margin-bottom:8px;">
@@ -306,7 +304,7 @@
                 </div>
             </div>
 
-            <!-- 아코디언 3: 본문 에디터 (기본 열림) -->
+            <!-- 아코디언 3: 본문 에디터 -->
             <div class="admin-accordion">
                 <div class="admin-accordion-head" onclick="toggleAccordion('acc-editor')">
                     <span>📝 3. 가이드 항목 상세 편집 (에디터)</span>
@@ -418,9 +416,9 @@
                             <p>평일 09:30 ~ 18:30 (점심시간 12:00~13:00 제외)</p>
                             <h2>소속 그룹 등록 절차 (앱 가입 가이드)</h2>
                             <ul>
-                                <li>1. 앱스토어/구글플레이에서 '패스트파이브' 앱 다운로드[cite: 53, 63]</li>
-                                <li>2. 사내 담당자/매니저에게 수령한 <strong>초대 링크(72시간 유효)</strong> 접속[cite: 54, 63]</li>
-                                <li>3. [승인 요청] ➡️ 그룹명 확인 후 [소속 확정] 클릭[cite: 54]</li>
+                                <li>1. 앱스토어/구글플레이에서 '패스트파이브' 앱 다운로드</li>
+                                <li>2. 사내 담당자/매니저에게 수령한 <strong>초대 링크(72시간 유효)</strong> 접속</li>
+                                <li>3. [승인 요청] ➡️ 그룹명 확인 후 [소속 확정] 클릭</li>
                             </ul>
                         `
                     },
@@ -450,17 +448,17 @@
                         sub: '패파 앱을 통한 스마트폰 태그 출입 가이드 (랜야드 재발급 3.3만원)',
                         body: `
                             <h1>모바일 출입 카드 이용안내</h1>
-                            <p>실물 카드 없이 스마트폰 앱 하나로 출입문을 해제할 수 있습니다.[cite: 64]</p>
+                            <p>실물 카드 없이 스마트폰 앱 하나로 출입문을 해제할 수 있습니다.</p>
                             <h2>발급 및 이용 방법</h2>
                             <ul>
-                                <li>1. 패파 앱 로그인 ➡️ [출입카드] 탭 ➡️ [출입카드 발급] 터치[cite: 55, 64]</li>
-                                <li>2. 도어락 리더기에 스마트폰 대기 (태그 시 에어팝 기기에 녹색불 점등)[cite: 64]</li>
+                                <li>1. 패파 앱 로그인 ➡️ [출입카드] 탭 ➡️ [출입카드 발급] 터치</li>
+                                <li>2. 도어락 리더기에 스마트폰 대기 (태그 시 에어팝 기기에 녹색불 점등)</li>
                             </ul>
                             <h2>확인사항 및 실물 카드 정책</h2>
                             <ul>
-                                <li>• 모바일 출입카드 상용화로 실물 카드키 키셋 제공 불가[cite: 64]</li>
-                                <li>• 실물 랜야드 카드 재발급 필요 시 <strong>33,000원(VAT 포함)</strong> 발생[cite: 64]</li>
-                                <li>• 인식 오류 시 아이폰 [블루투스 허용], 갤럭시 [NFC 카드모드] 재설정[cite: 64]</li>
+                                <li>• 모바일 출입카드 상용화로 실물 카드키 키셋 제공 불가</li>
+                                <li>• 실물 랜야드 카드 재발급 필요 시 <strong>33,000원(VAT 포함)</strong> 발생</li>
+                                <li>• 인식 오류 시 아이폰 [블루투스 허용], 갤럭시 [NFC 카드모드] 재설정</li>
                             </ul>
                         `
                     },
@@ -493,7 +491,7 @@
                             <h1>복합기 드라이버 및 결제 세팅</h1>
                             <h2>1. 최초 흑백 인쇄 세팅</h2>
                             <ul>
-                                <li>• 앱 [내계정] ➡️ [설정] ➡️ [복합기 계정등록] 전용 PW 설정[cite: 63]</li>
+                                <li>• 앱 [내계정] ➡️ [설정] ➡️ [복합기 계정등록] 전용 PW 설정</li>
                                 <li>• PC에서 <code>print.fastfive.co.kr</code> 접속 ➡️ 드라이버 및 Sindoh Cloud MPS 설치</li>
                                 <li>• <strong>흑백 인쇄:</strong> 인당 월 200장 무료 제공</li>
                             </ul>
@@ -549,20 +547,20 @@
                             <h2>1. F&B 바 및 취식 정책</h2>
                             <ul>
                                 <li>• 시리얼, 우유/두유, 원두커피 무상 제공</li>
-                                <li>• 취식 가능 장소: 사무실, 1층 라운지, 13층 다이닝룸 (점심시간 11:00~14:00)[cite: 68]</li>
-                                <li>• 취식 금지 공간: 미팅룸, 폰부스 (음료만 가능)[cite: 68]</li>
-                                <li>• 공용 냉장고 스티커 필수 부착 (매주 금요일 18:00 미부착 음식물 폐기)[cite: 68]</li>
+                                <li>• 취식 가능 장소: 사무실, 1층 라운지, 13층 다이닝룸 (점심시간 11:00~14:00)</li>
+                                <li>• 취식 금지 공간: 미팅룸, 폰부스 (음료만 가능)</li>
+                                <li>• 공용 냉장고 스티커 필수 부착 (매주 금요일 18:00 미부착 음식물 폐기)</li>
                             </ul>
                             <h2>2. 우편물 & 택배 수령</h2>
                             <ul>
-                                <li>• 1층 메일룸 수령 (주소 작성 시 반드시 사무실 호수+회사명 기재)[cite: 68]</li>
-                                <li>• 등기 우편 및 카드는 직접 대면 수령 필수 (2개월 미수령 시 반송/폐기)[cite: 68]</li>
+                                <li>• 1층 메일룸 수령 (주소 작성 시 반드시 사무실 호수+회사명 기재)</li>
+                                <li>• 등기 우편 및 카드는 직접 대면 수령 필수 (2개월 미수령 시 반송/폐기)</li>
                             </ul>
                             <h2>3. 기타 수칙</h2>
                             <ul>
-                                <li>• 1:1 문의 운영시간: 평일 08:00 ~ 22:00 (주말/공휴일 휴무)[cite: 65]</li>
-                                <li>• 대형폐기물 접수: 강남구 통합콜센터 태화용역(1522-3833) 직접 신청[cite: 68]</li>
-                                <li>• 건물 내/외부 전체 금연 (전자담배 포함 절대 불가)[cite: 68]</li>
+                                <li>• 1:1 문의 운영시간: 평일 08:00 ~ 22:00 (주말/공휴일 휴무)</li>
+                                <li>• 대형폐기물 접수: 강남구 통합콜센터 태화용역(1522-3833) 직접 신청</li>
+                                <li>• 건물 내/외부 전체 금연 (전자담배 포함 절대 불가)</li>
                             </ul>
                         `
                     }
@@ -570,7 +568,7 @@
             }
         };
 
-        // 데이터 자동 감지 및 복구
+        // 기존 저장소 자동 검색 및 안전 매핑
         function loadStoredData() {
             let keys = ['ff_branch_datastore_v2', 'ff_branch_datastore', 'ff_modal_db', 'ff_app_db'];
             for (let k of keys) {
@@ -579,6 +577,37 @@
                     try {
                         let parsed = JSON.parse(d);
                         if (parsed['seolleung5'] && parsed['seolleung5'].items) {
+                            Object.keys(parsed).forEach(bKey => {
+                                let b = parsed[bKey];
+                                if (!b.masterTabs || b.masterTabs.includes('기타')) {
+                                    b.masterTabs = defaultBranchData['seolleung5'].masterTabs;
+                                }
+                                if (!b.subCategories) {
+                                    b.subCategories = defaultBranchData['seolleung5'].subCategories;
+                                }
+                                if (b.items) {
+                                    Object.keys(b.items).forEach(iKey => {
+                                        let item = b.items[iKey];
+                                        if (!item.mainCat || item.mainCat === '기타') {
+                                            if (iKey.includes('welcome') || iKey.includes('wifi') || iKey.includes('door')) item.mainCat = '웰컴 & 필수 가이드';
+                                            else if (iKey.includes('furniture') || iKey.includes('printer')) item.mainCat = '사무공간 & 비품';
+                                            else if (iKey.includes('credit')) item.mainCat = '크레딧 & 회의실';
+                                            else if (iKey.includes('benefits')) item.mainCat = '제휴 혜택';
+                                            else item.mainCat = '주차/택배/에티켓';
+                                        }
+                                        if (!item.subCat || item.subCat === '일반') {
+                                            if (iKey.includes('welcome')) item.subCat = '웰컴 & 지점 안내';
+                                            else if (iKey.includes('wifi') || iKey.includes('door')) item.subCat = '네트워크 & 출입';
+                                            else if (iKey.includes('furniture')) item.subCat = '사무 가구 & 전력';
+                                            else if (iKey.includes('printer')) item.subCat = '복합기 & OA';
+                                            else if (iKey.includes('credit')) item.subCat = '크레딧 정책';
+                                            else if (iKey.includes('benefits')) item.subCat = '멤버십 전용 혜택';
+                                            else item.subCat = '캔틴 & 키친';
+                                        }
+                                    });
+                                }
+                            });
+                            localStorage.setItem('ff_branch_datastore_v2', JSON.stringify(parsed));
                             return parsed;
                         }
                     } catch(e) {}
@@ -649,7 +678,7 @@
 
             Object.keys(data.items).forEach(key => {
                 const item = data.items[key];
-                const mainCat = item.mainCat || '기타';
+                const mainCat = item.mainCat || '웰컴 & 필수 가이드';
                 const subCat = item.subCat || '일반';
 
                 if (!mainGrouped[mainCat]) mainGrouped[mainCat] = {};
@@ -868,7 +897,6 @@
             }
         }
 
-        /* 대카테고리(상단 탭) 이름 변경 및 순서 변경 */
         function renameMainTabPrompt() {
             const oldName = document.getElementById('admManageMainTabSelect').value;
             const newName = prompt("'" + oldName + "' 대카테고리의 새 이름을 입력하세요:", oldName);
@@ -908,7 +936,6 @@
             renderBranchView();
         }
 
-        /* 중카테고리(소제목) 이름 변경 및 순서 변경 */
         function renameSubCatPrompt() {
             const mainCat = document.getElementById('admManageMainTabSelect').value;
             const oldSub = document.getElementById('admManageSubCatSelect').value;
