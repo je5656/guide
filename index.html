@@ -26,7 +26,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-tap-highlight-color: transparent; }
         body { background-color: var(--bg-main); color: var(--text-body); line-height: 1.6; padding-bottom: 40px; }
 
-        /* Sticky Top Header */
+        /* Fixed Top Header */
         header { position: sticky; top: 0; z-index: 1000; background: #FFFFFF; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
         .header-top { padding: 12px 20px 8px; display: flex; justify-content: space-between; align-items: center; max-width: 880px; margin: 0 auto; gap: 12px; }
         .brand-logo { font-weight: 800; font-size: 1.15rem; color: var(--text-title); display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap; }
@@ -71,28 +71,54 @@
         .info-item-title { font-weight: 700; font-size: 0.92rem; color: var(--text-title); }
         .info-item-sub { font-size: 0.82rem; color: var(--text-sub); margin-top: 2px; }
 
-        /* Beautiful Modal Layout */
+        /* 공통 본문 서식 스타일 (프론트/에디터 통일) */
+        .modal-body, .editor-content { font-size: 0.95rem; color: var(--text-body); line-height: 1.65; }
+        .modal-body h1, .editor-content h1 { font-size: 1.25rem; font-weight: 800; color: var(--text-title); margin: 18px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--border-color); }
+        .modal-body h2, .editor-content h2 { font-size: 1.1rem; font-weight: 700; color: var(--text-title); margin: 14px 0 6px; }
+        .modal-body h3, .editor-content h3 { font-size: 1rem; font-weight: 700; color: var(--primary); margin: 12px 0 4px; }
+        .modal-body ul, .editor-content ul { padding-left: 20px; margin-bottom: 10px; }
+        .modal-body hr, .editor-content hr { border: none; border-top: 1.5px dashed var(--border-color); margin: 16px 0; }
+
+        /* Modal Overlay */
         .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
         .modal-overlay.active { display: flex; }
         .modal-card { background: #FFFFFF; border-radius: 24px; width: 100%; max-width: 680px; max-height: 88vh; overflow-y: auto; padding: 32px 28px; position: relative; text-align: left; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-        .modal-close { position: absolute; top: 22px; right: 22px; background: var(--bg-main); border: none; width: 34px; height: 34px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; font-weight: 800; display: flex; align-items: center; justify-content: center; color: #64748B; transition: all 0.2s; }
-        .modal-close:hover { background: #E2E8F0; color: #0F172A; }
-        .modal-badge { background: var(--badge-bg); color: var(--badge-text); font-size: 0.75rem; font-weight: 800; padding: 5px 12px; border-radius: 8px; display: inline-block; margin-bottom: 14px; letter-spacing: 0.5px; }
+        .modal-close { position: absolute; top: 22px; right: 22px; background: var(--bg-main); border: none; width: 34px; height: 34px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; font-weight: 800; display: flex; align-items: center; justify-content: center; color: #64748B; }
+        .modal-badge { background: var(--badge-bg); color: var(--badge-text); font-size: 0.75rem; font-weight: 800; padding: 5px 12px; border-radius: 8px; display: inline-block; margin-bottom: 14px; }
         .modal-title { font-size: 1.4rem; font-weight: 800; color: var(--text-title); margin-bottom: 16px; line-height: 1.35; }
-        .modal-body { font-size: 0.95rem; color: var(--text-body); line-height: 1.65; }
-        .modal-body h1 { font-size: 1.25rem; font-weight: 800; color: var(--text-title); margin: 18px 0 8px; padding-bottom: 6px; border-bottom: 1.5px solid var(--border-color); }
-        .modal-body h2 { font-size: 1.1rem; font-weight: 700; color: var(--text-title); margin: 14px 0 6px; }
-        .modal-body h3 { font-size: 1rem; font-weight: 700; color: var(--primary); margin: 12px 0 4px; }
-        .modal-body ul { padding-left: 20px; margin-bottom: 10px; }
-        .modal-body li { margin-bottom: 4px; }
         
         .btn-landing-action { display: inline-flex; align-items: center; gap: 6px; background: var(--primary); color: #FFFFFF; font-weight: 800; padding: 12px 22px; border-radius: 12px; text-decoration: none; margin-top: 14px; font-size: 0.92rem; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25); transition: all 0.2s; }
         .btn-landing-action:hover { background: var(--primary-hover); transform: translateY(-1px); }
 
-        /* Admin Modal */
-        .admin-modal-card { background: #FFFFFF; border-radius: 20px; width: 100%; max-width: 840px; max-height: 90vh; overflow-y: auto; padding: 24px 20px; position: relative; text-align: left; border: 2px solid var(--ff-orange); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
-        .btn-adm { padding: 6px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: 800; border: none; cursor: pointer; }
-        .editor-content { border: 1px solid var(--border-color); padding: 14px; min-height: 200px; background: #FFFFFF; border-radius: 0 0 8px 8px; outline: none; }
+        /* FULL-SCREEN ADMIN WORKSPACE (전체 화면 대형 관리자 창) */
+        .admin-modal-card {
+            background: #FFFFFF; border-radius: 24px; width: 95vw; max-width: 1200px; height: 92vh;
+            display: flex; flex-direction: column; padding: 0; position: relative; text-align: left;
+            border: 2px solid var(--ff-orange); box-shadow: 0 25px 60px rgba(0,0,0,0.3); overflow: hidden;
+        }
+
+        .admin-header-bar {
+            background: #1E293B; color: #FFFFFF; padding: 16px 24px; display: flex;
+            justify-content: space-between; align-items: center; flex-shrink: 0;
+        }
+
+        .admin-nav-tabs {
+            background: #F1F5F9; border-bottom: 1px solid var(--border-color); padding: 0 24px;
+            display: flex; gap: 6px; flex-shrink: 0;
+        }
+
+        .adm-tab-btn {
+            padding: 12px 20px; font-size: 0.92rem; font-weight: 800; color: var(--text-sub);
+            border: none; background: transparent; cursor: pointer; border-bottom: 3px solid transparent;
+        }
+        .adm-tab-btn.active { color: var(--ff-orange); border-bottom-color: var(--ff-orange); background: #FFFFFF; }
+
+        .admin-tab-content {
+            flex: 1; padding: 24px; overflow-y: auto; display: none; background: #FFFFFF;
+        }
+        .admin-tab-content.active { display: block; }
+
+        .btn-adm { padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 800; border: none; cursor: pointer; transition: all 0.2s; }
 
         footer { max-width: 880px; margin: 40px auto 10px; padding: 16px 20px; border-top: 1px solid #F1F5F9; font-size: 0.75rem; color: #B4B4B8; text-align: center; }
         .secret-trigger { color: #B4B4B8; cursor: pointer; font-weight: 600; }
@@ -164,100 +190,122 @@
         </div>
     </div>
 
-    <!-- ADMIN MODAL -->
+    <!-- FULL-SCREEN ADMIN MODAL WORKSPACE -->
     <div class="modal-overlay" id="adminModalOverlay" onclick="closeAdminOutside(event)">
         <div class="admin-modal-card">
-            <button class="modal-close" onclick="closeAdminModal()">✕</button>
-            
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:2px solid #F1F5F9; padding-bottom:12px;">
-                <strong style="color:var(--ff-orange); font-size:1.1rem;">⚙️ 지점 가이드 통합 관리자 센터</strong>
-                <div>
+            <!-- Top Action Header -->
+            <div class="admin-header-bar">
+                <div style="font-size:1.15rem; font-weight:800; color:#FFEDD5; display:flex; align-items:center; gap:8px;">
+                    <span>⚙️ 지점 통합 가이드 스튜디오 (관리자)</span>
+                </div>
+                <div style="display:flex; gap:8px; align-items:center;">
                     <button class="btn-adm" style="background:#0284C7; color:#FFF;" onclick="previewCurrentEditor()">👁️ 미리보기</button>
-                    <button class="btn-adm" style="background:#1E293B; color:#FFF;" onclick="addNewItemPrompt()">+ 새 가이드 항목</button>
-                    <button class="btn-adm" style="background:var(--ff-orange); color:#FFF;" onclick="saveAdminChanges()">💾 저장하기</button>
+                    <button class="btn-adm" style="background:#1E293B; color:#FFF;" onclick="addNewItemPrompt()">+ 새 항목 추가</button>
+                    <button class="btn-adm" style="background:var(--ff-orange); color:#FFF;" onclick="saveAdminChanges()">💾 전체 저장하기</button>
+                    <button class="modal-close" style="position:static; width:32px; height:32px;" onclick="closeAdminModal()">✕</button>
                 </div>
             </div>
 
-            <div style="background:#FFF7ED; padding:10px; border-radius:10px; margin-bottom:12px;">
-                <label style="font-size:0.82rem; font-weight:800; color:#C2410C; display:block; margin-bottom:4px;">🏢 수정할 지점 선택</label>
-                <select id="admBranchSelect" class="search-input" style="padding:8px 12px; font-weight:800; color:#C2410C;" onchange="switchAdminBranch(this.value)">
-                    <option value="seolleung5">선릉5호점</option>
-                    <option value="seolleung1">선릉1호점</option>
-                    <option value="seolleung2">선릉2호점</option>
-                    <option value="seolleung3">선릉3호점</option>
-                    <option value="seolleung_central">선릉센트럴점</option>
-                </select>
+            <!-- Navigation Tabs for Clean Layout -->
+            <div class="admin-nav-tabs">
+                <button class="adm-tab-btn active" onclick="switchAdminTab('tab-editor', this)">📝 1. 본문 글 수정 (에디터)</button>
+                <button class="adm-tab-btn" onclick="switchAdminTab('tab-category', this)">📁 2. 카테고리 관리</button>
+                <button class="adm-tab-btn" onclick="switchAdminTab('tab-settings', this)">🏢 3. 지점 & 배너 설정</button>
             </div>
 
-            <div style="background:#F8FAFC; border:1px solid var(--border-color); border-radius:10px; padding:12px; margin-bottom:12px;">
-                <label style="font-size:0.82rem; font-weight:800; display:block; margin-bottom:6px;">📁 카테고리 관리 (이름/순서 변경)</label>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-                    <div>
-                        <select id="admManageMainTabSelect" class="search-input" style="padding:6px; margin-bottom:6px;" onchange="populateSubCatManageDropdown()"></select>
-                        <div style="display:flex; gap:4px;">
-                            <button class="btn-adm" style="background:#1E293B; color:#FFF; padding:4px 8px; font-size:0.75rem;" onclick="addNewMainTabPrompt()">+추가</button>
-                            <button class="btn-adm" style="background:#475569; color:#FFF; padding:4px 8px; font-size:0.75rem;" onclick="renameMainTabPrompt()">✏️수정</button>
-                            <button class="btn-adm" style="background:#475569; color:#FFF; padding:4px 8px; font-size:0.75rem;" onclick="moveMainTab('up')">▲</button>
-                            <button class="btn-adm" style="background:#475569; color:#FFF; padding:4px 8px; font-size:0.75rem;" onclick="moveMainTab('down')">▼</button>
+            <!-- TAB 1: Editor -->
+            <div class="admin-tab-content active" id="tab-editor">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                    <label style="font-size:0.95rem; font-weight:800; color:var(--text-title);">수정할 가이드 항목 선택</label>
+                    <button class="btn-adm" style="background:#EF4444; color:#FFF; padding:4px 10px; font-size:0.8rem;" onclick="deleteCurrentItem()">🗑️ 항목 삭제</button>
+                </div>
+                <select id="admItemSelect" class="search-input" style="padding:10px; font-size:0.92rem; margin-bottom:16px;" onchange="loadItemToEditor()"></select>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+                    <div><label style="font-size:0.85rem; font-weight:800; display:block; margin-bottom:4px;">소속 대카테고리 (상단 탭)</label><select id="admMainCatSelect" class="search-input" style="padding:8px;" onchange="updateSubCatDropdowns()"></select></div>
+                    <div><label style="font-size:0.85rem; font-weight:800; display:block; margin-bottom:4px;">소속 중카테고리 (소제목)</label><select id="admSubCatSelect" class="search-input" style="padding:8px;"></select></div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+                    <div><label style="font-size:0.85rem; font-weight:800; display:block; margin-bottom:4px;">팝업 타이틀 (대제목)</label><input type="text" id="admTitleInput" class="search-input" style="padding:8px;"></div>
+                    <div><label style="font-size:0.85rem; font-weight:800; display:block; margin-bottom:4px;">요약 설명 (리스트 노출)</label><input type="text" id="admSubInput" class="search-input" style="padding:8px;"></div>
+                </div>
+
+                <div>
+                    <label style="font-size:0.85rem; font-weight:800; display:block; margin-bottom:6px;">본문 작성 에디터 (프론트 화면과 100% 동일한 스타일 제공)</label>
+                    <div style="background:#F8FAFC; border:1px solid var(--border-color); border-bottom:none; padding:8px; border-radius:8px 8px 0 0; display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+                        <select class="editor-select" onchange="execCmd('formatBlock', this.value); this.selectedIndex=0;" style="padding:6px; font-size:0.85rem;">
+                            <option value="">서식 선택</option>
+                            <option value="H1">대제목 (H1 - 아래 구분선 자동생성)</option>
+                            <option value="H2">중제목 (H2)</option>
+                            <option value="H3">소제목 (H3)</option>
+                            <option value="P">본문 문단 (P)</option>
+                        </select>
+                        <button class="btn-adm" style="background:#fff; border:1px solid #ccc;" onclick="execCmd('bold')"><b>B</b></button>
+                        <button class="btn-adm" style="background:#fff; border:1px solid #ccc;" onclick="execCmd('italic')"><i>I</i></button>
+                        <button class="btn-adm" style="background:#fff; border:1px solid #ccc;" onclick="execCmd('underline')"><u>U</u></button>
+                        <button class="btn-adm" style="background:#fff; border:1px solid #ccc;" onclick="execCmd('insertUnorderedList')">• 목록</button>
+                        <button class="btn-adm" style="background:#fff; border:1px solid #ccc;" onclick="execCmd('insertHorizontalRule')">➖ 구분선(HR)</button>
+                        <button class="btn-adm" style="background:#fff; border:1px solid #ccc;" onclick="insertLinkPrompt()">🔗 링크</button>
+                        <button class="btn-adm" style="background:#fff; border:1px solid #ccc;" onclick="insertImagePrompt()">🖼️ 이미지</button>
+                        <input type="color" onchange="execColor(this.value)" style="height:30px; border:none; cursor:pointer;" title="글자색">
+                    </div>
+                    <div class="editor-content" id="editorContent" contenteditable="true" style="min-height:300px;"></div>
+                </div>
+            </div>
+
+            <!-- TAB 2: Category Management -->
+            <div class="admin-tab-content" id="tab-category">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+                    <div style="background:#F8FAFC; border:1px solid var(--border-color); border-radius:12px; padding:20px;">
+                        <h3 style="font-size:1rem; font-weight:800; color:var(--text-title); margin-bottom:12px;">📁 대카테고리 관리 (상단 탭)</h3>
+                        <select id="admManageMainTabSelect" class="search-input" style="padding:10px; margin-bottom:12px;" onchange="populateSubCatManageDropdown()"></select>
+                        <div style="display:flex; gap:6px;">
+                            <button class="btn-adm" style="background:#1E293B; color:#FFF;" onclick="addNewMainTabPrompt()">+ 대카테고리 추가</button>
+                            <button class="btn-adm" style="background:#475569; color:#FFF;" onclick="renameMainTabPrompt()">✏️ 이름 변경</button>
+                            <button class="btn-adm" style="background:#475569; color:#FFF;" onclick="moveMainTab('up')">▲ 위로</button>
+                            <button class="btn-adm" style="background:#475569; color:#FFF;" onclick="moveMainTab('down')">▼ 아래로</button>
                         </div>
                     </div>
-                    <div>
-                        <select id="admManageSubCatSelect" class="search-input" style="padding:6px; margin-bottom:6px;"></select>
-                        <div style="display:flex; gap:4px;">
-                            <button class="btn-adm" style="background:#1E293B; color:#FFF; padding:4px 8px; font-size:0.75rem;" onclick="addNewSubCatPrompt()">+추가</button>
-                            <button class="btn-adm" style="background:#475569; color:#FFF; padding:4px 8px; font-size:0.75rem;" onclick="renameSubCatPrompt()">✏️수정</button>
-                            <button class="btn-adm" style="background:#475569; color:#FFF; padding:4px 8px; font-size:0.75rem;" onclick="moveSubCat('up')">▲</button>
-                            <button class="btn-adm" style="background:#475569; color:#FFF; padding:4px 8px; font-size:0.75rem;" onclick="moveSubCat('down')">▼</button>
+
+                    <div style="background:#F8FAFC; border:1px solid var(--border-color); border-radius:12px; padding:20px;">
+                        <h3 style="font-size:1rem; font-weight:800; color:var(--text-title); margin-bottom:12px;">📂 중카테고리 관리 (소제목)</h3>
+                        <select id="admManageSubCatSelect" class="search-input" style="padding:10px; margin-bottom:12px;"></select>
+                        <div style="display:flex; gap:6px;">
+                            <button class="btn-adm" style="background:#1E293B; color:#FFF;" onclick="addNewSubCatPrompt()">+ 중카테고리 추가</button>
+                            <button class="btn-adm" style="background:#475569; color:#FFF;" onclick="renameSubCatPrompt()">✏️ 이름 변경</button>
+                            <button class="btn-adm" style="background:#475569; color:#FFF;" onclick="moveSubCat('up')">▲ 위로</button>
+                            <button class="btn-adm" style="background:#475569; color:#FFF;" onclick="moveSubCat('down')">▼ 아래로</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:10px; padding:10px; margin-bottom:12px;">
-                <label style="font-size:0.82rem; font-weight:800; color:#1E40AF; display:block; margin-bottom:4px;">🟦 상단 파란색 배너 문구 수정</label>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-                    <input type="text" id="admBannerTitleInput" class="search-input" style="padding:6px; background:#fff;" placeholder="배너 대제목">
-                    <input type="text" id="admBannerDescInput" class="search-input" style="padding:6px; background:#fff;" placeholder="배너 설명글">
-                </div>
-            </div>
-
-            <div style="margin-bottom:12px;">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                    <label style="font-size:0.82rem; font-weight:800;">수정할 가이드 항목 선택</label>
-                    <button class="btn-adm" style="background:#EF4444; color:#FFF; padding:3px 8px; font-size:0.75rem;" onclick="deleteCurrentItem()">🗑️ 항목 삭제</button>
-                </div>
-                <select id="admItemSelect" class="search-input" style="padding:8px;" onchange="loadItemToEditor()"></select>
-            </div>
-
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
-                <div><label style="font-size:0.8rem; font-weight:700;">소속 대카테고리</label><select id="admMainCatSelect" class="search-input" style="padding:6px;" onchange="updateSubCatDropdowns()"></select></div>
-                <div><label style="font-size:0.8rem; font-weight:700;">소속 중카테고리</label><select id="admSubCatSelect" class="search-input" style="padding:6px;"></select></div>
-            </div>
-
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
-                <div><label style="font-size:0.8rem; font-weight:700;">팝업 타이틀</label><input type="text" id="admTitleInput" class="search-input" style="padding:6px;"></div>
-                <div><label style="font-size:0.8rem; font-weight:700;">요약 설명</label><input type="text" id="admSubInput" class="search-input" style="padding:6px;"></div>
-            </div>
-
-            <div style="margin-bottom:12px;">
-                <label style="font-size:0.82rem; font-weight:800; display:block; margin-bottom:4px;">본문 편집 에디터</label>
-                <div style="background:#F8FAFC; border:1px solid var(--border-color); border-bottom:none; padding:6px; border-radius:8px 8px 0 0; display:flex; gap:4px; flex-wrap:wrap;">
-                    <select class="editor-select" onchange="execCmd('formatBlock', this.value); this.selectedIndex=0;" style="padding:4px;">
-                        <option value="">서식</option><option value="H1">대제목(H1)</option><option value="H2">중제목(H2)</option><option value="H3">소제목(H3)</option><option value="P">본문(P)</option>
+            <!-- TAB 3: Branch & Banner Settings -->
+            <div class="admin-tab-content" id="tab-settings">
+                <div style="background:#FFF7ED; border:1px solid #FFEDD5; border-radius:12px; padding:18px; margin-bottom:18px;">
+                    <label style="font-size:0.9rem; font-weight:800; color:#C2410C; display:block; margin-bottom:6px;">🏢 편집할 지점 선택</label>
+                    <select id="admBranchSelect" class="search-input" style="padding:10px; font-weight:800; color:#C2410C;" onchange="switchAdminBranch(this.value)">
+                        <option value="seolleung5">선릉5호점</option>
+                        <option value="seolleung1">선릉1호점</option>
+                        <option value="seolleung2">선릉2호점</option>
+                        <option value="seolleung3">선릉3호점</option>
+                        <option value="seolleung_central">선릉센트럴점</option>
                     </select>
-                    <button class="btn-adm" style="background:#fff; border:1px solid #ccc; padding:4px 8px;" onclick="execCmd('bold')"><b>B</b></button>
-                    <button class="btn-adm" style="background:#fff; border:1px solid #ccc; padding:4px 8px;" onclick="execCmd('italic')"><i>I</i></button>
-                    <button class="btn-adm" style="background:#fff; border:1px solid #ccc; padding:4px 8px;" onclick="execCmd('underline')"><u>U</u></button>
-                    <button class="btn-adm" style="background:#fff; border:1px solid #ccc; padding:4px 8px;" onclick="execCmd('insertUnorderedList')">• 목록</button>
-                    <button class="btn-adm" style="background:#fff; border:1px solid #ccc; padding:4px 8px;" onclick="insertLinkPrompt()">🔗 링크</button>
-                    <button class="btn-adm" style="background:#fff; border:1px solid #ccc; padding:4px 8px;" onclick="insertImagePrompt()">🖼️ 이미지</button>
-                    <input type="color" onchange="execColor(this.value)" style="height:26px; border:none; cursor:pointer;">
                 </div>
-                <div class="editor-content" id="editorContent" contenteditable="true"></div>
-            </div>
 
-            <div style="background:#F8FAFC; border:1px solid var(--border-color); border-radius:10px; padding:10px;">
-                <button onclick="changePasswordPrompt()" style="background:#334155; color:#fff; border:none; padding:6px 12px; border-radius:6px; font-weight:700; font-size:0.8rem; cursor:pointer;">🔑 관리자 비밀번호 변경</button>
+                <div style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:12px; padding:18px; margin-bottom:18px;">
+                    <label style="font-size:0.9rem; font-weight:800; color:#1E40AF; display:block; margin-bottom:10px;">🟦 메인 파란색 배너 문구 수정</label>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                        <div><span style="font-size:0.8rem; font-weight:700; color:#1E40AF;">배너 대제목</span><input type="text" id="admBannerTitleInput" class="search-input" style="padding:8px; background:#fff;"></div>
+                        <div><span style="font-size:0.8rem; font-weight:700; color:#1E40AF;">배너 서브 설명글</span><input type="text" id="admBannerDescInput" class="search-input" style="padding:8px; background:#fff;"></div>
+                    </div>
+                </div>
+
+                <div style="background:#F8FAFC; border:1px solid var(--border-color); border-radius:12px; padding:18px;">
+                    <label style="font-size:0.9rem; font-weight:800; display:block; margin-bottom:8px;">🔒 비밀번호 변경</label>
+                    <button onclick="changePasswordPrompt()" style="background:#334155; color:#fff; border:none; padding:8px 16px; border-radius:8px; font-weight:700; font-size:0.85rem; cursor:pointer;">🔑 관리자 비밀번호 변경하기</button>
+                </div>
             </div>
         </div>
     </div>
@@ -494,27 +542,27 @@
                 <div class="tab-item ${i===0?'active':''}" onclick="switchCategory('${t}', this)">${t}</div>
             `).join('');
 
-            const grouped = {};
+            const mainGrouped = {};
             Object.keys(data.items || {}).forEach(k => {
                 const item = data.items[k];
                 const mainCat = item.mainCat || '웰컴 & 필수 가이드';
                 const subCat = item.subCat || '일반';
 
-                if (!grouped[mainCat]) grouped[mainCat] = {};
-                if (!grouped[mainCat][subCat]) grouped[mainCat][subCat] = [];
+                if (!mainGrouped[mainCat]) mainGrouped[mainCat] = {};
+                if (!mainGrouped[mainCat][subCat]) mainGrouped[mainCat][subCat] = [];
 
-                grouped[mainCat][subCat].push({ key: k, ...item });
+                mainGrouped[mainCat][subCat].push({ key: k, ...item });
             });
 
             let html = '';
-            Object.keys(grouped).forEach(mainCatName => {
+            Object.keys(mainGrouped).forEach(mainCatName => {
                 html += `
                     <section class="section-card category-sec" data-cat="${mainCatName}">
                         <span class="section-badge">${mainCatName.toUpperCase()}</span>
                         <h2 class="section-title">${mainCatName}</h2>
                 `;
 
-                const subGroup = grouped[mainCatName];
+                const subGroup = mainGrouped[mainCatName];
                 Object.keys(subGroup).forEach(subCatName => {
                     html += `<div class="sub-cat-title">${subCatName}</div>`;
                     subGroup[subCatName].forEach(i => {
@@ -549,6 +597,14 @@
                     sec.style.display = 'none';
                 }
             });
+        }
+
+        function switchAdminTab(tabId, btnEl) {
+            document.querySelectorAll('.adm-tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.admin-tab-content').forEach(c => c.classList.remove('active'));
+            
+            btnEl.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
         }
 
         function openModal(key) {
